@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/*
+ DrawerKit ver.1.1.0
+  部品
+  　　・.Drawer(左裏に隠れてる。動かない)
+        - Drawer_title
+        - Drawer_items
+        - Drawer_item
+    　・.Container (本体。右にスライドする)
+        - Container_mask
+        - Container_mask-isHidden
+  バグ
+      透けて見えることがある
+      ⇒その上のレイヤをbackground:whiteで隠す。
+  js実装
+      クリック時にContainer-isDrawingを付けたり外したりする。
+      Container上にマスクを表示。マスクをタップでcloseにする。
+  どんどん改良して下さい。
+*/
+// 変数
+$DK_zIndex: $Drawer_zIndex;
+
+
+// 横から出てくる部分
+.Drawer {
+  z-index: $DK_zIndex;
+  width: 70%;
+  color: white;
+  position: fixed;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; // 慣性スクロール
+  top: 0;
+  bottom: 0;
+}
+.Drawer_title {
+  background-color: #313532;
+  padding: .8rem 0;
+  padding-left: 2rem;
+}
+.Drawer_items {
+  list-style: none;
+  margin: 0 1.2rem;
+}
+.Drawer_item {
+  padding: 1.2rem 0;
+  padding-left: 3rem;
+  text-overflow: ellipsis;
+}
+
+// Container Drawing //
+.Container {
+  position: absolute; //【臨時】コンテナのレイヤー化　後ろのDrawerが透けて見えるから対策
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.Container-isDrawing { //クリック時に付け外しする
+  -webkit-transform: translateX(70%);
+  transform: translateX(70%);
+  overflow-y: hidden;
+}
+
+.Container_mask {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.Container_mask-isHidden { //初期。付け外しする
+  display: none;
+}

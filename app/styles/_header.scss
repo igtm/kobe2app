@@ -1,0 +1,23 @@
+@charset "UTF-8";
+// ======= header Region ========= //
+.Header {
+  z-index: $Header_zIndex;
+  background: $Header_backColor;
+  color: white;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  position: fixed;
+
+}
+.Header_bar { // 大きさ・色とかの設定のみ
+  font-size: 2.3em;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.Header_title {
+  line-height: 40px;
+  font-size: 24px;
+  text-align: center;
+}

@@ -1,23 +1,30 @@
 define([
 	'backbone',
 	'communicator',
-	'hbs!tmpl/welcome'
+    'views/layout/ContainerLayout',
+    'views/layout/DrawerLayout',
+    'routers/Router',
+    'controllers/RouterController'
 ],
 
-function( Backbone, Communicator, Welcome_tmpl ) {
+function( Backbone, Communicator, ContainerLayout, DrawerLayout, Router, RouterController ) {
     'use strict';
-
-	var welcomeTmpl = Welcome_tmpl;
 
 	var App = new Backbone.Marionette.Application();
 
 	/* Add application regions here */
-	App.addRegions({});
+	App.addRegions({
+        "Container": ".Container",
+        "Drawer": ".Drawer"
+    });
 
 	/* Add initializers here */
 	App.addInitializer( function () {
-		document.body.innerHTML = welcomeTmpl({ success: "CONGRATS!" });
-		Communicator.mediator.trigger("APP:START");
+        this.Container.attachView(new ContainerLayout({el: App.Container.el}));
+        this.Drawer.attachView(new DrawerLayout({el: App.Drawer.el}));
+
+        new Router({controller: new RouterController()});
+        Backbone.history.start();
 	});
 
 	return App;
