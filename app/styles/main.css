@@ -6467,7 +6467,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .Container-isDrawing {
   -webkit-transform: translateX(70%);
   transform: translateX(70%);
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  position: fixed; }
 
 .Container_mask {
   z-index: 1000;
