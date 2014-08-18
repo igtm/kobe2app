@@ -4,6 +4,7 @@
   z-index: $Header_zIndex;
   background: $Header_backColor;
   color: white;
+  padding-top: 1rem;
   margin: 0;
   top: 0;
   width: 100%;
@@ -11,10 +12,10 @@
 
 }
 .Header_bar { // 大きさ・色とかの設定のみ
-  font-size: 2.3em;
+  font-size: 2.3rem;
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 30%;
+  left: 6%;
 }
 .Header_title {
   line-height: 40px;
