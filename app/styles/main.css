@@ -6431,6 +6431,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 */
 .Drawer {
   z-index: -1;
+  background-color: #3e454c;
   width: 70%;
   color: white;
   position: fixed;

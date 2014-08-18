@@ -17,6 +17,9 @@ require.config({
         bootstrap: {
             deps: ['jquery'],
             exports: 'jquery'
+        },
+        'zepto.touch' : {
+            deps: ['jquery']
         }
     },
 
@@ -39,6 +42,9 @@ require.config({
 
         /* handlebars from the require handlerbars plugin below */
         handlebars: '../bower_components/require-handlebars-plugin/Handlebars',
+
+        /* vender */
+        'zepto.touch': 'vendor/zepto.touch',
 
         /* require handlebars plugin - Alex Sexton */
         i18nprecompile: '../bower_components/require-handlebars-plugin/hbs/i18nprecompile',

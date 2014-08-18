@@ -4,7 +4,8 @@ define([
     'views/layout/ContainerLayout',
     'views/layout/DrawerLayout',
     'routers/Router',
-    'controllers/RouterController'
+    'controllers/RouterController',
+    'zepto.touch'
 ],
 
 function( Backbone, Communicator, ContainerLayout, DrawerLayout, Router, RouterController ) {

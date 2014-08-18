@@ -34,7 +34,9 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
 
 		/* Ui events hash */
 		events: {
-            "touchstart .Container_mask": "drawToggle"
+            "tap .Container_mask": "drawToggle",
+            'swipeLeft .Container_mask': "drawToggle",
+            'swipeRight': "drawToggle"
         },
     /* -----------------------  ドロワー部分 ---------------------------  */
         drawToggle: function(){

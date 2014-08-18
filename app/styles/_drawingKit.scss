@@ -19,11 +19,13 @@
 */
 // 変数
 $DK_zIndex: $Drawer_zIndex;
+$DK_Bcolor: $Drawer_backColor;
 
 
 // 横から出てくる部分
 .Drawer {
   z-index: $DK_zIndex;
+  background-color: $DK_Bcolor;
   width: 70%;
   color: white;
   position: fixed;

@@ -25,7 +25,7 @@ function( Backbone, Communicator  ) {
 
 		/* Ui events hash */
 		events: {
-            "touchstart .Header_bar": "onTouchstartHeader_bar"
+            "tap .Header_bar": "onTouchstartHeader_bar"
         },
 
         onTouchstartHeader_bar: function(){

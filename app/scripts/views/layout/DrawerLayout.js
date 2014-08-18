@@ -19,7 +19,7 @@ function( Backbone, DrawerlayoutTmpl  ) {
 
 		/* Ui events hash */
 		events: {
-            "touchstart .Drawer_item[data-action]": "action"
+            "tap .Drawer_item[data-action]": "action"
         },
 
         action: function(){
