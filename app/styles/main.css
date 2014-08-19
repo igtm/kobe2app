@@ -6411,6 +6411,33 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .fa-bomb:before {
   content: "\f1e2"; }
 
+/* Color Code
+#F5F5F5
+White Smoke
+#79D1B0
+Downy
+#FDC44F
+Golden Tainoi
+#33BFDB
+Summer Sky
+#5EBABA
+Puerto Rico
+#44DEDE
+Turquoise
+#8DCF3F
+Atlantis
+#93B8CA
+Polo Blue
+#F58E7E
+Light Coral
+#737373
+Empress
+#383838
+Eclipse
+
+#363947
+Black Rock
+*/
 /*
  DrawerKit ver.1.1.0
   部品
@@ -6431,7 +6458,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 */
 .Drawer {
   z-index: -1;
-  background-color: #3e454c;
+  background-color: #383838;
   width: 70%;
   color: white;
   position: fixed;
@@ -6441,18 +6468,20 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   bottom: 0; }
 
 .Drawer_title {
-  background-color: #313532;
   padding: .8rem 0;
   padding-left: 2rem; }
 
 .Drawer_items {
   list-style: none;
-  margin: 0 1.2rem; }
+  margin: 0; }
 
 .Drawer_item {
   padding: 1.2rem 0;
   padding-left: 3rem;
   text-overflow: ellipsis; }
+
+.Drawer_item-checked {
+  background: #f58e7e; }
 
 .Container {
   position: absolute;
@@ -6460,7 +6489,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   top: 0;
   right: 0;
   left: 0;
-  background: white;
+  background: whitesmoke;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out; }
 
@@ -6483,7 +6512,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
 .Header {
   z-index: 1;
-  background: #70acff;
+  background: #44dede;
   color: white;
   padding-top: 1rem;
   margin: 0;

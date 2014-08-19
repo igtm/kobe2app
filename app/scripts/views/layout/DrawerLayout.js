@@ -1,7 +1,8 @@
 define([
-	'backbone'
+	'backbone',
+    'communicator'
     ],
-function( Backbone, DrawerlayoutTmpl  ) {
+function( Backbone, Communicator  ) {
     'use strict';
 
 	/* Return a Layout class definition */
@@ -9,6 +10,7 @@ function( Backbone, DrawerlayoutTmpl  ) {
 
 		initialize: function() {
 			console.log("initialize a Drawerlayout Layout");
+            this.currentItem = undefined;
 		},
 
     	/* Layout sub regions */
@@ -22,7 +24,14 @@ function( Backbone, DrawerlayoutTmpl  ) {
             "tap .Drawer_item[data-action]": "action"
         },
 
-        action: function(){
+        action: function(e){
+            if($(e.currentTarget).hasClass("Drawer_item-checked")){return ;}// 同じの押した
+            if(this.currentItem){
+                this.currentItem.removeClass("Drawer_item-checked"); // 既チェックを消す
+            }
+            this.currentItem = $(e.currentTarget);// 入れ替え
+            this.currentItem.addClass("Drawer_item-checked"); // チェックする
+            Communicator.command.execute("DrawToggle:Container"); // ->Container Region
         },
 
 		/* on render callback */

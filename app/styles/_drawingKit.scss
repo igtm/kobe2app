@@ -19,13 +19,15 @@
 */
 // 変数
 $DK_zIndex: $Drawer_zIndex;
-$DK_Bcolor: $Drawer_backColor;
+$DK_bColor: $Drawer_backColor;
+$DK_cColor: $Container_backColor;
+$DK_itemCheckedColor: $Drawer_itemCheckedColor;
 
 
 // 横から出てくる部分
 .Drawer {
   z-index: $DK_zIndex;
-  background-color: $DK_Bcolor;
+  background-color: $DK_bColor;
   width: 70%;
   color: white;
   position: fixed;
@@ -35,18 +37,20 @@ $DK_Bcolor: $Drawer_backColor;
   bottom: 0;
 }
 .Drawer_title {
-  background-color: #313532;
   padding: .8rem 0;
   padding-left: 2rem;
 }
 .Drawer_items {
   list-style: none;
-  margin: 0 1.2rem;
+  margin: 0;
 }
 .Drawer_item {
   padding: 1.2rem 0;
   padding-left: 3rem;
   text-overflow: ellipsis;
+}
+.Drawer_item-checked {
+  background: $DK_itemCheckedColor;
 }
 
 // Container Drawing //
@@ -56,7 +60,7 @@ $DK_Bcolor: $Drawer_backColor;
   top: 0;
   right: 0;
   left: 0;
-  background: white;
+  background: $DK_cColor;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
 }
