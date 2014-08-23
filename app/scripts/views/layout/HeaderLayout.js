@@ -10,7 +10,9 @@ function( Backbone, Communicator  ) {
 
 		initialize: function() {
 			console.log("initialize a Headerlayout Layout");
-		},
+            Communicator.command.setHandler("change:Header",this.changeHeader,this); // <- Route
+            this.bindUIElements();
+        },
 
         el: ".Header",
 
@@ -27,9 +29,13 @@ function( Backbone, Communicator  ) {
 		events: {
             "tap .Header_bar": "onTouchstartHeader_bar"
         },
-
+        /* Drawing */
         onTouchstartHeader_bar: function(){
             Communicator.command.execute("DrawToggle:Container"); // -> ContainerLayout
+        },
+
+        changeHeader:function(page){
+            this.ui.title.text(page);
         },
 
 		/* on render callback */

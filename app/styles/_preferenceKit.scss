@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*
+ PreferenceKit ver.1.0.0
+  部品
+  　　・.Preference
+        - Preference_title
+        - Preference_items
+        - Preference_item
+        - Preference_key
+        - Preference_value
+  バグ
+  js実装
+
+  どんどん改良して下さい。
+*/
+// 変数
+$PK_BGColor: $Container_backColor;
+
+
+.Preference {
+  padding: 1.0rem;
+  background-color: $PK_BGColor;
+
+  select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+  }
+}
+
+.Preference_title {
+  text-align: center;
+}
+
+.Preference_items {
+  border: 1px solid #DBDBDB;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.Preference_item {
+  position: relative;
+  z-index: 1;
+  padding: 1.0rem 1rem;
+  border-bottom: 1px solid #cbcbcb;
+  @include display-box(end);
+}
+
+.Preference_key {
+  -webkit-box-flex: 1;
+}
+
+.Preference_value {
+  color: #70acff;
+  text-align: right;
+}
