@@ -31,6 +31,17 @@
   border-bottom: solid 1px $darkGrey;
 }
 .Dialog_confirm_buttons {
+  padding: 10% 0;
+  width: 100%;
+  display: -webkit-box;
+}
+.Dialog_confirm_ok {
+  width: 30%;
+  margin: 5%;
+}
+.Dialog_confirm_cancel {
+  width: 30%;
+  margin: 5%;
 }
 
 /* alert */

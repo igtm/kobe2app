@@ -6634,6 +6634,19 @@ Loft.gitのbackgroundcolor
   padding: 10% 0;
   border-bottom: solid 1px #9e9e9e; }
 
+.Dialog_confirm_buttons {
+  padding: 10% 0;
+  width: 100%;
+  display: -webkit-; }
+
+.Dialog_confirm_ok {
+  width: 30%;
+  margin: 5%; }
+
+.Dialog_confirm_cancel {
+  width: 30%;
+  margin: 5%; }
+
 /* alert */
 .Dialog_alert {
   z-index: 10;
