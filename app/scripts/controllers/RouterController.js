@@ -11,12 +11,18 @@ function( Backbone, Communicator ) {
 			console.log("initialize a Routercontroller Controller");
 		},
         home: function(){
-            Communicator.command.execute("change:Header", "home");
-            Communicator.command.execute("checkItem:Drawer", "home"); // data-actionがhomeのやつcheckedする
+            this.Private_setHeaderDrawer("Home","home");
         },
         page: function(page) {
-            Communicator.command.execute("change:Header", page);
-            Communicator.command.execute("checkItem:Drawer", page); // data-actionが???のやつcheckedする
+            this.Private_setHeaderDrawer(page,page);
+        },
+
+
+        /*   Drawerをtap時にする共通部分   */
+        Private_setHeaderDrawer: function(title, action){
+            Communicator.command.execute("change:Header", title); // Header_titleを書き換え
+            Communicator.command.execute("checkItem:Drawer", action); // data-actionが???のやつcheckedする
+            Communicator.command.execute("change:Content", action); // Content内を指定のものに変更表示
         }
 	});
 

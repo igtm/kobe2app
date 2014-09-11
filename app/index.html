@@ -22,6 +22,10 @@
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
 
+        <!-- fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+
     </head>
 
     <body>
@@ -35,7 +39,8 @@
             <div class="Container_mask Container_mask-isHidden"></div>
         </div>
         <div class="Drawer">
-            <div class="Drawer_title">Menu</div>
+            <div class="Drawer_title">Menu
+            </div>
             <ul class="Drawer_items">
                 <li class="Drawer_item" data-action="home"><i class="fa fa-home fa-fw"></i>Home</li>
                 <li class="Drawer_item" data-action="A">A</li>
@@ -50,6 +55,27 @@
                 <li class="Drawer_item" data-action="J">J</li>
             </ul>
         </div>
+        <div class="Dialog">
+            <div class="Dialog_loading is-hidden">
+                <i class="Dialog_loading_spinning fa fa-spinner fa-spin fa-3x"></i>
+            </div>
+            <div class="Dialog_confirm is-hidden">
+                <div class="Dialog_confirm_title">警告</div>
+                <div class="Dialog_confirm_content">いいですかねー？そんなことして。</div>
+                <div class="Dialog_confirm_buttons">
+                    <div class="Dialog_confirm_ok button button-ok">OK</div>
+                    <div class="Dialog_confirm_cancel button button-cancel">Cancel</div>
+                </div>
+            </div>
+            <div class="Dialog_alert is-hidden">
+                <div class="Dialog_alert_content">通信エラー</div>
+                <div class="Dialog_alert_buttons">
+                    <div class="Dialog_alert_ok button button-ok">OK</div>
+                </div>
+            </div>
+            <div class="Dialog_mask is-hidden"></div>
+        </div>
+        <div class="Preference"></div>
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/init" src="bower_components/requirejs/require.js"></script>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.Content {
+  width: 100%;
+  position: absolute;
+  top:3.5rem; // header padding:1rem height:2.5rem
+}
+.Content_items {
+  background-color: $Container_backColor;
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+}
+.Content_item {
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid #e3e3e3;
+  margin: .6rem 0;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+
+}
+.Content_item:last-child {
+  border-bottom: 0px;
+}
+.Content_item-isChecked {
+  background: $Drawer_itemCheckedColor !important;
+}
+
+/* event */
+.Content_item_image {
+
+}
+.Content_item_text {
+  padding: 5% 5%;
+}

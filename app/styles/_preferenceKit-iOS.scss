@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /*
- PreferenceKit ver.1.0.0
+ PreferenceKit-iOS ver.1.0.0
   部品
-  　　・.Preference
+  　　・.Preference (.Preference-isDrawing)
         - Preference_title
         - Preference_items
         - Preference_item
@@ -15,6 +15,16 @@
 */
 // 変数
 $PK_BGColor: $Container_backColor;
+
+// 関数
+@mixin display-box($pack: start, $orient: horizontal) {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: $orient;
+  box-orient: $orient;
+  -webkit-box-pack: $pack;
+  box-pack: $pack;
+}
 
 
 .Preference {
@@ -58,4 +68,8 @@ $PK_BGColor: $Container_backColor;
 .Preference_value {
   color: #70acff;
   text-align: right;
+}
+
+.Preference-isDrawing {
+
 }

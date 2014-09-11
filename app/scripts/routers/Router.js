@@ -13,8 +13,7 @@ function(Backbone, Communicator){
 		/* Backbone routes hash */
 		appRoutes: {
             '':'home',
-            ':page':'page'
-
+            ':page':'page' // 仮実装
         },
 
         navigator: function(to){

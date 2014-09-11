@@ -5,10 +5,12 @@ define([
     'views/layout/DrawerLayout',
     'routers/Router',
     'controllers/RouterController',
+    'views/layout/DialogLayout',
+    'views/layout/PreferenceLayout',
     'zepto.touch'
 ],
 
-function( Backbone, Communicator, ContainerLayout, DrawerLayout, Router, RouterController ) {
+function( Backbone, Communicator, ContainerLayout, DrawerLayout, Router, RouterController, DialogLayout, PreferenceLayout ) {
     'use strict';
 
 	var App = new Backbone.Marionette.Application();
@@ -16,13 +18,21 @@ function( Backbone, Communicator, ContainerLayout, DrawerLayout, Router, RouterC
 	/* Add application regions here */
 	App.addRegions({
         "Container": ".Container",
-        "Drawer": ".Drawer"
+        "Drawer": ".Drawer",
+        "Dialog": ".Dialog",
+        "Preference": ".Preference"
     });
 
 	/* Add initializers here */
 	App.addInitializer( function () {
         this.Container.attachView(new ContainerLayout({el: App.Container.el}));
         this.Drawer.attachView(new DrawerLayout({el: App.Drawer.el}));
+        this.Dialog.attachView(new DialogLayout());
+        this.Preference.attachView(new PreferenceLayout({el: App.Preference.el}));
+        Communicator.command.setHandler("show:Preference",
+            function(){
+
+            },this);
 
         new Router({controller: new RouterController()});
         Backbone.history.start();

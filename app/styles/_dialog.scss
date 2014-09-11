@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.Dialog {
+}
+.Dialog_loading {
+  z-index: $Dialog_zIndex;
+  position: absolute;
+  top: 44%;
+  left: 44%;
+}
+
+/* confirm */
+.Dialog_confirm {
+  z-index: $Dialog_zIndex;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  background: white;
+  text-align: center;
+}
+.Dialog_confirm_title {
+  padding: 5% 0;
+  border-bottom: solid 1px $lightBlue;
+  color: $lightBlue;
+  font-size: 1.3rem;
+}
+.Dialog_confirm_content {
+  padding: 10% 0;
+  border-bottom: solid 1px $darkGrey;
+}
+.Dialog_confirm_buttons {
+}
+
+/* alert */
+.Dialog_alert {
+  z-index: $Dialog_zIndex;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+  background: white;
+  text-align: center;
+}
+.Dialog_alert_content {
+  padding: 10% 0;
+  border-bottom: solid 1px $lightBlue;
+  color: $lightBlue;
+}
+.Dialog_alert_buttons {
+  width: 50%;
+  margin: 2% 25%;
+}
+
+.Dialog_mask {
+  z-index: $Dialog_zIndex - 1;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+}

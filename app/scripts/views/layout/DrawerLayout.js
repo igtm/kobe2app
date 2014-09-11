@@ -22,7 +22,8 @@ function( Backbone, Communicator  ) {
 
 		/* Ui events hash */
 		events: {
-            "tap .Drawer_item[data-action]": "action"
+            "tap .Drawer_item[data-action]": "action",
+            "tap .Drawer_prefIcon": "showPreference"
         },
 
         action: function(e){
@@ -44,6 +45,10 @@ function( Backbone, Communicator  ) {
             }
             this.currentItem = $(".Drawer_item[data-action = "+page+"]"); // 入れ替え
             this.currentItem.addClass("Drawer_item-checked"); // チェックする
+        },
+
+        showPreference: function(){
+
         },
 
 		/* on render callback */

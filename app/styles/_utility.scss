@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.is-hidden {
+  display: none;
+}
+
+/* button */
+.button {
+  border-radius: 4px;
+  color:white;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+}
+.button-ok {
+  background-color: $lightBlue;
+}
+.button-cancel {
+  background-color: $darkGrey;
+}

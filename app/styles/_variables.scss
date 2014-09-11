@@ -2,13 +2,42 @@
 
 $Drawer_zIndex: -1;
 $Header_zIndex: 1;
+$Dialog_zIndex: 10;
 
-$Container_backColor: #F5F5F5; // white smoke
-$Header_backColor: #44DEDE; // Turquoise
-$Drawer_backColor: #383838; // Eclipse
-$Drawer_itemCheckedColor: #F58E7E; // Light Coral
+$Container_backColor: #ECEEF1; // Ocean#Solitude
+$Header_backColor: #44DEDE; // Natural#Turquoise
+$Drawer_backColor: #383838; // Natural#Eclipse
+$Drawer_itemCheckedColor: #F58E7E; // Natural#Light Coral
 
-/* Color Code
+$Content_fontColor: #40AAEF; // Ocean#Summer Sky
+
+$lightBlue: #70acff;
+$darkGrey: #9e9e9e;
+
+$EnglishFont: 'Prata', serif; // 'Crimson Text'
+
+/* === Color Code === */
+
+/* Ocean
+#ECEEF1
+Solitude
+#0E7AC4
+Denim
+#40AAEF
+Summer Sky
+#363947
+Black Rock
+#58BE89
+Silver Tree
+#FBA848
+My Sin
+#F27398
+Light Coral
+#CCCCCC
+Very Light Grey
+*/
+
+/* NATURAL
 #F5F5F5
 White Smoke
 #79D1B0
@@ -32,6 +61,9 @@ Empress
 #383838
 Eclipse
 
-#363947
-Black Rock
+*/
+
+/* その他
+#E9EAEE
+Loft.gitのbackgroundcolor
 */

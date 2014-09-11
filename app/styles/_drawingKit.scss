@@ -22,12 +22,14 @@ $DK_zIndex: $Drawer_zIndex;
 $DK_bColor: $Drawer_backColor;
 $DK_cColor: $Container_backColor;
 $DK_itemCheckedColor: $Drawer_itemCheckedColor;
+$DK_font: $EnglishFont;
 
 
 // 横から出てくる部分
 .Drawer {
   z-index: $DK_zIndex;
   background-color: $DK_bColor;
+  font-family: $DK_font;
   width: 70%;
   color: white;
   position: fixed;
@@ -82,4 +84,9 @@ $DK_itemCheckedColor: $Drawer_itemCheckedColor;
 }
 .Container_mask-isHidden { //初期。付け外しする
   display: none;
+}
+
+/*   temporary CSS     */
+.Drawer_prefIcon {
+  text-align: right;
 }
