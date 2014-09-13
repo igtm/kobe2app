@@ -32,7 +32,8 @@ function( Backbone, Communicator  ) {
             "title": ".Header_title",
             "bar": ".Header_bar",
             "back": ".Header_back",
-            "down": ".Header_down"
+            "down": ".Header_down",
+            "up": ".Header_up"
         },
 
 		/* Ui events hash */

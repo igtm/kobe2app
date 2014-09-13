@@ -23,6 +23,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
 
             /* DropItems カテゴリ */
             Communicator.command.setHandler("toggleDropItems:Container",this.toggleDropItems,this); // <- HeaderLayout
+            Communicator.command.setHandler("modifyCategoryVariable:Container",this.modifyCategoryVariable,this); // <- Router
             this.dropItemIsOpen = false;
             this.currentCategory = "all"; // 前見ていた履歴を保存できればいいけどなー
 		},
@@ -57,6 +58,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
             this.toggleDropItems();
             var category = $(e.currentTarget).attr("data-action");
             if(category == this.currentCategory){return ;}// 同じの押した
+            this.currentCategory = category; // 前見ていた履歴を保存できればいいけどなー
             if(category == "all"){
                 var url = "home"
             }else{
@@ -67,13 +69,18 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
         toggleDropItems: function(){
             if(this.dropItemIsOpen){
                 this.dropItemIsOpen = false;
-                $(".Header_down").removeClass("Header_is-rotate180"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                $(".Header_down").removeClass("Header_is-hidden"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                $(".Header_up").addClass("Header_is-hidden");      // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
                 this.ui.DropItems.removeClass("DropItems_is-shown");
             }else{
                 this.dropItemIsOpen = true;
-                $(".Header_down").addClass("Header_is-rotate180"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                $(".Header_down").addClass("Header_is-hidden"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                $(".Header_up").removeClass("Header_is-hidden"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
                 this.ui.DropItems.addClass("DropItems_is-shown");
             }
+        },
+        modifyCategoryVariable: function(category){
+            this.currentCategory = category;
         },
     /* -----------------------  ドロップダウン・カテゴリ選択 ---------------------------  */
 
@@ -94,7 +101,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
 
                     setTimeout(function(){
                         $(".Drawer").css("display","none"); // 後ろにあってもfixedの奴は、スクロールの悪さをするので削除しておく
-                    },200);
+                    },200); // Drawerにかかる時間ms
                     break;
             }
         },

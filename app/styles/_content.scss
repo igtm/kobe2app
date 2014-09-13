@@ -12,6 +12,7 @@
   margin: 0;
 }
 .Content_item {
+  position: relative; // categoryをうまく表示させるための基準 bottom:0
   background-color: white;
   text-align: center;
   overflow: hidden;
@@ -33,6 +34,31 @@
 .Content_item_image {
 
 }
+.Content_item_category {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: 0.9;
+  font-size: 22px;
+  font-family: Prata;
+  text-align: left;
+  line-height: 1.8rem;
+  padding-top: 5%;
+  z-index: 1;
+}
 .Content_item_text {
-  padding: 5% 5%;
+  padding: 4%;
+  padding-left: 32px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+  color: white;
 }

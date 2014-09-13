@@ -6476,6 +6476,16 @@ Loft.gitのbackgroundcolor
 .button-cancel {
   background-color: #9e9e9e; }
 
+/* Category Color */
+.categoryColor_umie {
+  background-color: #40AAEF; }
+
+.categoryColor_sanda {
+  background-color: #F27398; }
+
+.categoryColor_mitsui {
+  background-color: #FBA848; }
+
 /*
  DrawerKit ver.1.1.0
   部品
@@ -6583,20 +6593,21 @@ Loft.gitのbackgroundcolor
   width: 45%;
   text-align: center; }
 
-.Header_down {
+.Header_down, .Header_up {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -2px;
+  bottom: -5px;
   margin: auto;
   width: 10px;
+  font-size: 1.1rem;
   text-align: center; }
 
 .Header_bar, .Header_down {
   -webkit-transition: 1000ms;
   transition: 1000ms; }
 
-.Header_back:not(.Header_is-hidden) {
+.Header_back:not(.Header_is-hidden), .Header_up:not(.Header_is-hidden) {
   -webkit-transition: 1000ms;
   transition: 1000ms; }
 
@@ -6605,16 +6616,15 @@ Loft.gitのbackgroundcolor
   opacity: 0;
   z-index: 6; }
 
-.Header_is-rotate180 {
-  transform: rotate(180deg); }
-
 .DropItems {
   position: fixed;
   top: -35%;
   width: 100%;
   z-index: 4;
-  background-color: lightcoral;
-  opacity: 0.9;
+  background-color: lightpink;
+  opacity: 0.95;
+  color: white;
+  font-family: "Prata", serif;
   -webkit-transition: 300ms;
   transition: 300ms; }
 
@@ -6639,6 +6649,7 @@ Loft.gitのbackgroundcolor
   margin: 0; }
 
 .Content_item {
+  position: relative;
   background-color: white;
   text-align: center;
   overflow: hidden;
@@ -6655,8 +6666,33 @@ Loft.gitのbackgroundcolor
   background: #f58e7e !important; }
 
 /* event */
+.Content_item_category {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: 0.9;
+  font-size: 22px;
+  font-family: Prata;
+  text-align: left;
+  line-height: 1.8rem;
+  padding-top: 5%;
+  z-index: 1; }
+
 .Content_item_text {
-  padding: 5% 5%; }
+  padding: 4%;
+  padding-left: 32px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+  color: white; }
 
 .Dialog_loading {
   z-index: 10;
