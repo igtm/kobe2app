@@ -6478,13 +6478,16 @@ Loft.gitのbackgroundcolor
 
 /* Category Color */
 .categoryColor_umie {
-  background-color: #40AAEF; }
+  border-right: solid 3px #40AAEF;
+  color: #40AAEF; }
 
 .categoryColor_sanda {
-  background-color: #F27398; }
+  border-right: solid 3px #F27398;
+  color: #F27398; }
 
 .categoryColor_mitsui {
-  background-color: #FBA848; }
+  border-right: solid 3px #FBA848;
+  color: #FBA848; }
 
 /*
  DrawerKit ver.1.1.0
@@ -6669,14 +6672,14 @@ Loft.gitのbackgroundcolor
 .Content_item_category {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
-  color: white;
   position: absolute;
   bottom: 0;
   left: 0;
   top: 0;
   height: 100%;
   opacity: 0.9;
-  font-size: 22px;
+  font-size: 28px;
+  font-weight: bold;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
