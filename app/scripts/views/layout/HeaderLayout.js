@@ -10,8 +10,16 @@ function( Backbone, Communicator  ) {
 
 		initialize: function() {
 			console.log("initialize a Headerlayout Layout");
-            Communicator.command.setHandler("change:Header",this.changeHeader,this); // <- Route
             this.bindUIElements();
+            /* Drawing 横メニュー */
+            Communicator.command.setHandler("changeTitle:Header",this.changeTitle,this); // <- Route
+
+            /* Paging ページ送り */
+            Communicator.command.setHandler("pageNext:Header",this.pageNext,this);
+            Communicator.command.setHandler("pageBack:Header",this.pageBack,this);
+
+            /* DropItems カテゴリ */
+            Communicator.command.setHandler("pageNext:Header",this.pageNext,this);
         },
 
         el: ".Header",
@@ -22,21 +30,39 @@ function( Backbone, Communicator  ) {
     	/* ui selector cache */
     	ui: {
             "title": ".Header_title",
-            "bar": ".Header_bar"
+            "bar": ".Header_bar",
+            "back": ".Header_back",
+            "down": ".Header_down"
         },
 
 		/* Ui events hash */
 		events: {
-            "tap .Header_bar": "onTouchstartHeader_bar"
-        },
-        /* Drawing */
-        onTouchstartHeader_bar: function(){
-            Communicator.command.execute("DrawToggle:Container"); // -> ContainerLayout
+            "tap .Header_bar": "onTapBar", // Drawing
+            "tap .Header_title": "onTapTitle" // DropItems
         },
 
-        changeHeader:function(page){
-            this.ui.title.text(page);
+        /* Drawing */
+        onTapBar: function(){
+            Communicator.command.execute("DrawToggle:Container"); // -> ContainerLayout
         },
+        /* DropDown */
+        onTapTitle: function(){
+            Communicator.command.execute("toggleDropItems:Container");
+        },
+        changeTitle:function(category){
+            this.ui.title.text(category);
+        },
+
+        /* Paging */
+        pageNext:function(){
+            this.ui.bar.addClass("Header_is-hidden");
+            this.ui.back.removeClass("Header_is-hidden");
+        },
+        pageBack:function(){
+            this.ui.bar.removeClass("Header_is-hidden");
+            this.ui.back.addClass("Header_is-hidden");
+        },
+
 
 		/* on render callback */
 		onRender: function() {}

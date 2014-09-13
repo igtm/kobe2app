@@ -13,11 +13,12 @@ function(Backbone, Communicator){
 		/* Backbone routes hash */
 		appRoutes: {
             '':'home',
+            'home/:category':'homeWithCategory',
             ':page':'page' // 仮実装
         },
 
-        navigator: function(to){
-            this.navigate(to,true);
+        navigator: function(url){
+            this.navigate(url,true);
         }
 	});
 });

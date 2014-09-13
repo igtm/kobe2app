@@ -1,5 +1,5 @@
 @charset "UTF-8";
-// ======= header Region ========= //
+// ======= header ========= //
 .Header {
   z-index: $Header_zIndex;
   background: $Header_backColor;
@@ -11,16 +11,69 @@
   top: 0;
   width: 100%;
   position: fixed;
-
 }
-.Header_bar { // 大きさ・色とかの設定のみ
+.Header_bar, .Header_back { // 大きさ・色とかの設定のみ
   font-size: 2.3rem;
   position: absolute;
   top: 30%;
   left: 6%;
+  z-index: $Header_zIndex +2;
 }
 .Header_title {
   line-height: 40px;
-  font-size: 24px;
+  font-size: 28px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 45%;
   text-align: center;
+}
+.Header_down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  margin: auto;
+  width: 10px;
+  text-align: center;
+}
+// transition
+.Header_bar, .Header_down { // もともと付いてるやつ
+  -webkit-transition: $pagingTransTime;
+  transition: $pagingTransTime;
+}
+.Header_back:not(.Header_is-hidden) { // もともと消えてるやつ
+  -webkit-transition: $pagingTransTime;
+  transition: $pagingTransTime;
+}
+.Header_is-hidden { // 付けたり外したりする
+  height: 0;
+  opacity: 0;
+  z-index: $Header_zIndex +1; // header_bar と header_backが完全には消えてないので後ろに回す。
+}
+.Header_is-rotate180 { // 付けたり外したりする
+  transform: rotate(180deg);
+}
+
+// ======= header dropItems ========= //
+.DropItems {
+  position: fixed;
+  top: -35%;
+  width:100%;
+  z-index: $Header_zIndex - 1;
+  background-color: $HeaderDropItems_BGColor;
+  opacity: 0.9;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+.DropItem {
+  font-size: 22px;
+  text-align: center;
+  padding: 4% 0;
+  border-bottom: solid 1px #ffffff;
+}
+.DropItems_is-shown {
+  top: 56px;
 }

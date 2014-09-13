@@ -13,12 +13,18 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
 
 		initialize: function() {
 			console.log("initialize a Containerlayout Layout");
+            this.bindUIElements();
             // Communicator
             Communicator.command.setHandler("DrawToggle:Container",this.drawToggle,this); // <- HeaderLayout
 
             // status
             this.drawStatus = 0; // 0=閉じてる 1=開いてる
             this.maskStatus = 0; // 0=マスク非表示 1=表示
+
+            /* DropItems カテゴリ */
+            Communicator.command.setHandler("toggleDropItems:Container",this.toggleDropItems,this); // <- HeaderLayout
+            this.dropItemIsOpen = false;
+            this.currentCategory = "all"; // 前見ていた履歴を保存できればいいけどなー
 		},
 
     	/* Layout sub regions */
@@ -29,19 +35,54 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
 
     	/* ui selector cache */
     	ui: {
-            "mask": ".Container_mask"
+            "mask": ".Container_mask",
+            "DropItems": ".DropItems"
         },
 
 		/* Ui events hash */
 		events: {
             "tap .Container_mask": "drawToggle",
             'swipeLeft .Container_mask': "drawToggle",
-            'swipeRight': "drawToggle"
+            'swipeRight': "drawToggle",
+            'tap .DropItem': "changeCategory"
         },
+
+    /* -----------------------  ドロップダウン・カテゴリ選択 ---------------------------  */
+        changeCategory: function(e){
+            /*
+             ①DropItems引っ込める
+             ②まずは一回Routeを更新。(URLだけで来ても同じように振る舞えるように、RouterFirstで。)
+             ③Routeに応じて、headerTitleの変更を行う。
+             */
+            this.toggleDropItems();
+            var category = $(e.currentTarget).attr("data-action");
+            if(category == this.currentCategory){return ;}// 同じの押した
+            if(category == "all"){
+                var url = "home"
+            }else{
+                var url = "home/"+category;
+            }
+            Communicator.command.execute("navigate:Router",url); // Routingする
+        },
+        toggleDropItems: function(){
+            if(this.dropItemIsOpen){
+                this.dropItemIsOpen = false;
+                $(".Header_down").removeClass("Header_is-rotate180"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                this.ui.DropItems.removeClass("DropItems_is-shown");
+            }else{
+                this.dropItemIsOpen = true;
+                $(".Header_down").addClass("Header_is-rotate180"); // 取り敢えずコッチで処理（headerに渡すのがメンドイ）
+                this.ui.DropItems.addClass("DropItems_is-shown");
+            }
+        },
+    /* -----------------------  ドロップダウン・カテゴリ選択 ---------------------------  */
+
+
     /* -----------------------  ドロワー部分 ---------------------------  */
         drawToggle: function(){
             switch(this.drawStatus){
                 case 0: // 閉じてる
+                    $(".Drawer").css("display",""); // 後ろにあってもfixedの奴は、スクロールの悪さをするので削除しておく
                     this.$el.addClass("Container-isDrawing");
                     this.maskToggle();
                     this.drawStatus = 1;
@@ -50,6 +91,10 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
                     this.$el.removeClass("Container-isDrawing");
                     this.maskToggle();
                     this.drawStatus = 0;
+
+                    setTimeout(function(){
+                        $(".Drawer").css("display","none"); // 後ろにあってもfixedの奴は、スクロールの悪さをするので削除しておく
+                    },200);
                     break;
             }
         },

@@ -11,7 +11,7 @@
         <title></title>
 
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
@@ -33,12 +33,20 @@
         <div class="Container">
             <header class="Header">
                 <i class="Header_bar fa fa-bars"></i>
+                <i class="Header_back fa fa-chevron-left Header_is-hidden"></i>
                 <div class="Header_title">　</div>
+                <i class="Header_down fa fa-caret-down"></i>
             </header>
+            <div class="DropItems">
+                <div class="DropItem" data-action="all">All</div>
+                <div class="DropItem" data-action="umie">Umie</div>
+                <div class="DropItem" data-action="sanda">三田</div>
+                <div class="DropItem" data-action="mitsui">三井</div>
+            </div>
             <div class="Content"></div>
             <div class="Container_mask Container_mask-isHidden"></div>
         </div>
-        <div class="Drawer">
+        <div class="Drawer" style="display: none;">
             <div class="Drawer_title">Menu
             </div>
             <ul class="Drawer_items">

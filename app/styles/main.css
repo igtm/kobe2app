@@ -6554,7 +6554,7 @@ Loft.gitのbackgroundcolor
   text-align: right; }
 
 .Header {
-  z-index: 1;
+  z-index: 5;
   background: #44dede;
   font-family: "Prata", serif;
   color: white;
@@ -6565,16 +6565,67 @@ Loft.gitのbackgroundcolor
   width: 100%;
   position: fixed; }
 
-.Header_bar {
+.Header_bar, .Header_back {
   font-size: 2.3rem;
   position: absolute;
   top: 30%;
-  left: 6%; }
+  left: 6%;
+  z-index: 7; }
 
 .Header_title {
   line-height: 40px;
-  font-size: 24px;
+  font-size: 28px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 45%;
   text-align: center; }
+
+.Header_down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  margin: auto;
+  width: 10px;
+  text-align: center; }
+
+.Header_bar, .Header_down {
+  -webkit-transition: 1000ms;
+  transition: 1000ms; }
+
+.Header_back:not(.Header_is-hidden) {
+  -webkit-transition: 1000ms;
+  transition: 1000ms; }
+
+.Header_is-hidden {
+  height: 0;
+  opacity: 0;
+  z-index: 6; }
+
+.Header_is-rotate180 {
+  transform: rotate(180deg); }
+
+.DropItems {
+  position: fixed;
+  top: -35%;
+  width: 100%;
+  z-index: 4;
+  background-color: lightcoral;
+  opacity: 0.9;
+  -webkit-transition: 300ms;
+  transition: 300ms; }
+
+.DropItem {
+  font-size: 22px;
+  text-align: center;
+  padding: 4% 0;
+  border-bottom: solid 1px #ffffff; }
+
+.DropItems_is-shown {
+  top: 56px; }
 
 .Content {
   width: 100%;
@@ -6637,7 +6688,7 @@ Loft.gitのbackgroundcolor
 .Dialog_confirm_buttons {
   padding: 10% 0;
   width: 100%;
-  display: -webkit-; }
+  display: -webkit-box; }
 
 .Dialog_confirm_ok {
   width: 30%;
