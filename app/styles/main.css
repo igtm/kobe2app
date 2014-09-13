@@ -6478,16 +6478,13 @@ Loft.gitのbackgroundcolor
 
 /* Category Color left */
 .categoryColor_umie {
-  border-right: solid 3px #40AAEF;
-  color: #40AAEF; }
+  background-color: #40AAEF; }
 
 .categoryColor_sanda {
-  border-right: solid 3px #F27398;
-  color: #F27398; }
+  background-color: #F27398; }
 
 .categoryColor_mitsui {
-  border-right: solid 3px #FBA848;
-  color: #FBA848; }
+  background-color: #FBA848; }
 
 /* Category Color bottom */
 .bottomColor_umie {
@@ -6680,25 +6677,23 @@ Loft.gitのbackgroundcolor
 
 /* event */
 .Content_item_category {
-  writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
   position: absolute;
-  bottom: 0;
+  bottom: 34px;
   left: 0;
-  top: 0;
-  height: 100%;
+  right: 0;
   opacity: 0.9;
+  color: white;
   font-size: 28px;
   font-weight: bold;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
-  padding-top: 5%;
-  z-index: 1; }
+  z-index: 1;
+  padding-left: 2%; }
 
 .Content_item_text {
-  padding: 4%;
-  padding-left: 32px;
+  padding: 9px;
+  padding-top: 5px;
   position: absolute;
   bottom: 0;
   right: 0;

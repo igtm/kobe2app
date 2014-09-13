@@ -35,25 +35,23 @@
 
 }
 .Content_item_category {
-  writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
   position: absolute;
-  bottom: 0;
+  bottom: 34px;
   left: 0;
-  top: 0;
-  height: 100%;
+  right: 0;
   opacity: 0.9;
+  color:white;
   font-size: 28px;
   font-weight: bold;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
-  padding-top: 5%;
   z-index: 1;
+  padding-left: 2%;
 }
 .Content_item_text {
-  padding: 4%;
-  padding-left: 32px;
+  padding: 9px;
+  padding-top: 5px;
   position: absolute;
   bottom: 0;
   right: 0;
