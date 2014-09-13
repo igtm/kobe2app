@@ -19,7 +19,7 @@
   background-color: $darkGrey;
 }
 
-/* Category Color */
+/* Category Color left */
 .categoryColor_umie {
   border-right: solid 3px #40AAEF;
   color: #40AAEF;
@@ -31,4 +31,15 @@
 .categoryColor_mitsui {
   border-right: solid 3px #FBA848;
   color: #FBA848;
+}
+
+/* Category Color bottom */
+.bottomColor_umie {
+  background-color: #40AAEF;
+}
+.bottomColor_sanda {
+  background-color: #F27398;
+}
+.bottomColor_mitsui {
+  background-color: #FBA848;
 }

@@ -6476,7 +6476,7 @@ Loft.gitのbackgroundcolor
 .button-cancel {
   background-color: #9e9e9e; }
 
-/* Category Color */
+/* Category Color left */
 .categoryColor_umie {
   border-right: solid 3px #40AAEF;
   color: #40AAEF; }
@@ -6488,6 +6488,16 @@ Loft.gitのbackgroundcolor
 .categoryColor_mitsui {
   border-right: solid 3px #FBA848;
   color: #FBA848; }
+
+/* Category Color bottom */
+.bottomColor_umie {
+  background-color: #40AAEF; }
+
+.bottomColor_sanda {
+  background-color: #F27398; }
+
+.bottomColor_mitsui {
+  background-color: #FBA848; }
 
 /*
  DrawerKit ver.1.1.0
@@ -6693,8 +6703,7 @@ Loft.gitのbackgroundcolor
   bottom: 0;
   right: 0;
   left: 0;
-  background: black;
-  opacity: 0.5;
+  opacity: 0.9;
   color: white; }
 
 .Dialog_loading {
