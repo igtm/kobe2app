@@ -35,14 +35,15 @@
 
 }
 .Content_item_category {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  color: white;
   position: absolute;
   bottom: 34px;
   left: 0;
   right: 0;
   opacity: 0.9;
-  color:white;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 22px;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
