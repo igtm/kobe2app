@@ -11,14 +11,12 @@ function( Backbone ) {
 		},
 
 		defaults: {
+            "id": null,
             "title":null,
-            "content":null,
             "image": null,
-            "fromdDay":null,
-            "toDay":null,
-            "place": null,
-            "time": null
-        },
+            "imageFlag":null,
+            "category": null
+        }
 
     });
 });

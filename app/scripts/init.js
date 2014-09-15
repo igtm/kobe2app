@@ -45,6 +45,8 @@ require.config({
 
         /* vender */
         'zepto.touch': 'vendor/zepto.touch',
+        iscroll: 'vendor/iscroll',
+
 
         /* require handlebars plugin - Alex Sexton */
         i18nprecompile: '../bower_components/require-handlebars-plugin/hbs/i18nprecompile',

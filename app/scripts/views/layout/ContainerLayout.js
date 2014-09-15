@@ -16,6 +16,8 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
             this.bindUIElements();
             // Communicator
             Communicator.command.setHandler("DrawToggle:Container",this.drawToggle,this); // <- HeaderLayout
+            Communicator.reqres.setHandler("getCategory:Container",this.getCategory,this); // <- EventComV
+
 
             // status
             this.drawStatus = 0; // 0=閉じてる 1=開いてる
@@ -26,6 +28,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
             Communicator.command.setHandler("modifyCategoryVariable:Container",this.modifyCategoryVariable,this); // <- Router
             this.dropItemIsOpen = false;
             this.currentCategory = "all"; // 前見ていた履歴を保存できればいいけどなー
+
 		},
 
     	/* Layout sub regions */
@@ -47,6 +50,13 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
             'swipeRight': "drawToggle",
             'tap .DropItem': "changeCategory"
         },
+
+        getCategory: function(){
+            return this.currentCategory;
+        },
+
+
+
 
     /* -----------------------  ドロップダウン・カテゴリ選択 ---------------------------  */
         changeCategory: function(e){
@@ -81,6 +91,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
         },
         modifyCategoryVariable: function(category){
             this.currentCategory = category;
+            window.scrollTo(0,0); // 一番上にスクロール
         },
     /* -----------------------  ドロップダウン・カテゴリ選択 ---------------------------  */
 
@@ -118,7 +129,6 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
             }
         },
     /* -----------------------  ドロワー部分 ---------------------------  */
-
 		/* on render callback */
 		onRender: function() {}
 	});

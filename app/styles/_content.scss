@@ -32,31 +32,47 @@
 
 /* event */
 .Content_item_image {
-
+  margin-left: 31px; // font-size:28+ border:3px
 }
 .Content_item_category {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
-  color: white;
   position: absolute;
-  bottom: 34px;
+  bottom: 0;
   left: 0;
-  right: 0;
-  opacity: 0.9;
-  font-size: 22px;
+  top: 0;
+  height: 100%;
+  opacity: .9;
+  font-size: 28px;
+  font-weight: 700;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
+  padding-top: 5%;
   z-index: 1;
-  padding-left: 2%;
 }
 .Content_item_text {
-  padding: 9px;
-  padding-top: 5px;
+  padding: 3%;
+  padding-left: 32px;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  opacity: 0.9;
-  color: white;
+  background: #000;
+  opacity: .6;
+  color: #fff;
+  white-space: normal; // 入りきらない部分は自動的に改行して表示
+}
+
+/* -- pullUp  --  */
+.Content_pullUp {
+  background-color: $Container_backColor;
+  height: 32px;
+}
+.Content_loading {
+  position: absolute;
+  left: 46%;
+  margin: 0;
+  width: 32px;
+  font-size: 32px;
 }

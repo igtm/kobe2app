@@ -31,6 +31,7 @@ function( Backbone, Communicator ) {
         },
         Private_getEvents: function(category){ // ①DropItemsのStatusを現Categoryに更新 ②getEventsWithCategory
             Communicator.command.execute("modifyCategoryVariable:Container",category); // ①DropItemsのStatusを現Categoryに更新
+            Communicator.command.execute("initPage:EventComV"); // page 1 に初期化
             Communicator.command.execute("getEventsWithCategory:EventComV",category); // ②getEventsWithCategory
 
         }

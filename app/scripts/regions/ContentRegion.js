@@ -27,6 +27,7 @@ function( Backbone, Communicator, EventComV, Events ) {
                     this.show(new EventComV({collection: new Events()}));
                     break;
                 default:
+                    Communicator.command.execute("initPage:EventComV"); // page 1 に初期化
                     this.close();
                     break;
             }

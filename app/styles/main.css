@@ -6478,13 +6478,16 @@ Loft.gitのbackgroundcolor
 
 /* Category Color left */
 .categoryColor_umie {
-  background-color: #40AAEF; }
+  border-right: solid 3px #40AAEF;
+  color: #40AAEF; }
 
 .categoryColor_sanda {
-  background-color: #F27398; }
+  border-right: solid 3px #F27398;
+  color: #F27398; }
 
 .categoryColor_mitsui {
-  background-color: #FBA848; }
+  border-right: solid 3px #FBA848;
+  color: #FBA848; }
 
 /*
  DrawerKit ver.1.1.0
@@ -6604,12 +6607,12 @@ Loft.gitのbackgroundcolor
   text-align: center; }
 
 .Header_bar, .Header_down {
-  -webkit-transition: 1000ms;
-  transition: 1000ms; }
+  -webkit-transition: 500ms;
+  transition: 500ms; }
 
 .Header_back:not(.Header_is-hidden), .Header_up:not(.Header_is-hidden) {
-  -webkit-transition: 1000ms;
-  transition: 1000ms; }
+  -webkit-transition: 500ms;
+  transition: 500ms; }
 
 .Header_is-hidden {
   height: 0;
@@ -6666,31 +6669,49 @@ Loft.gitのbackgroundcolor
   background: #f58e7e !important; }
 
 /* event */
+.Content_item_image {
+  margin-left: 31px; }
+
 .Content_item_category {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
-  color: white;
   position: absolute;
-  bottom: 34px;
+  bottom: 0;
   left: 0;
-  right: 0;
-  opacity: 0.9;
-  font-size: 22px;
+  top: 0;
+  height: 100%;
+  opacity: .9;
+  font-size: 28px;
+  font-weight: 700;
   font-family: Prata;
   text-align: left;
   line-height: 1.8rem;
-  z-index: 1;
-  padding-left: 2%; }
+  padding-top: 5%;
+  z-index: 1; }
 
 .Content_item_text {
-  padding: 9px;
-  padding-top: 5px;
+  padding: 3%;
+  padding-left: 32px;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  opacity: 0.9;
-  color: white; }
+  background: #000;
+  opacity: .6;
+  color: #fff;
+  white-space: normal; }
+
+/* -- pullUp  --  */
+.Content_pullUp {
+  background-color: #eceef1;
+  height: 32px; }
+
+.Content_loading {
+  position: absolute;
+  left: 46%;
+  margin: 0;
+  width: 32px;
+  font-size: 32px; }
 
 .Dialog_loading {
   z-index: 10;
