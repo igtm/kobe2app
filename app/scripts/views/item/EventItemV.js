@@ -1,8 +1,9 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/EventItemV_tmpl'
+	'hbs!tmpl/item/EventItemV_tmpl',
+    'communicator'
 ],
-function( Backbone, EventitemvTmpl  ) {
+function( Backbone, EventitemvTmpl, Communicator  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
@@ -22,7 +23,13 @@ function( Backbone, EventitemvTmpl  ) {
     	ui: {},
 
 		/* Ui events hash */
-		events: {},
+		events: {
+            'tap .Content_item_image':'nextPage'
+        },
+        nextPage: function(){
+            console.log("this.model.id:"+this.model.id);
+            Communicator.command.execute("nextPage:ContentNextRegion","home",this.model.id);
+        },
 
 		/* on render callback */
 		onRender: function() {}

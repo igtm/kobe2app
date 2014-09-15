@@ -6607,12 +6607,12 @@ Loft.gitのbackgroundcolor
   text-align: center; }
 
 .Header_bar, .Header_down {
-  -webkit-transition: 500ms;
-  transition: 500ms; }
+  -webkit-transition: 200ms;
+  transition: 200ms; }
 
 .Header_back:not(.Header_is-hidden), .Header_up:not(.Header_is-hidden) {
-  -webkit-transition: 500ms;
-  transition: 500ms; }
+  -webkit-transition: 200ms;
+  transition: 200ms; }
 
 .Header_is-hidden {
   height: 0;
@@ -6712,6 +6712,46 @@ Loft.gitのbackgroundcolor
   margin: 0;
   width: 32px;
   font-size: 32px; }
+
+.ContentNext {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 3.5rem;
+  bottom: 0;
+  left: 100%;
+  background-color: #eceef1;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in; }
+
+.ContentNext-isPaging {
+  left: 0; }
+
+/* event */
+.ContentNext_item_image {
+  margin-left: 31px; }
+
+.ContentNext_item_category {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: .9;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Prata;
+  text-align: left;
+  line-height: 1.8rem;
+  padding-top: 5%;
+  z-index: 1; }
+
+.ContentNext_item_text {
+  margin-top: 3.5rem;
+  background: #ffffff;
+  white-space: normal; }
 
 .Dialog_loading {
   z-index: 10;

@@ -12,11 +12,12 @@ function( Backbone, Communicator  ) {
 			console.log("initialize a Headerlayout Layout");
             this.bindUIElements();
             /* Drawing 横メニュー */
-            Communicator.command.setHandler("changeTitle:Header",this.changeTitle,this); // <- Route
+            Communicator.command.setHandler("changeTitleOnFirstPage:Header",this.changeTitleOnFirstPage,this); // <- Route
 
             /* Paging ページ送り */
             Communicator.command.setHandler("pageNext:Header",this.pageNext,this);
             Communicator.command.setHandler("pageBack:Header",this.pageBack,this);
+            this.firstPageTitle = undefined;
 
             /* DropItems カテゴリ */
             Communicator.command.setHandler("pageNext:Header",this.pageNext,this);
@@ -39,7 +40,8 @@ function( Backbone, Communicator  ) {
 		/* Ui events hash */
 		events: {
             "tap .Header_bar": "onTapBar", // Drawing
-            "tap .Header_title": "onTapTitle" // DropItems
+            "tap .Header_title": "onTapTitle", // DropItems
+            "tap .Header_back": "onTapBack" // backPage
         },
 
         /* Drawing */
@@ -50,8 +52,9 @@ function( Backbone, Communicator  ) {
         onTapTitle: function(){
             Communicator.command.execute("toggleDropItems:Container");
         },
-        changeTitle:function(category){
+        changeTitleOnFirstPage:function(category){
             this.ui.title.text(category);
+            this.firstPageTitle = category; // pageTitleを保持（nextPageに飛んだ後、帰ってくるときに使う）
         },
 
         /* Paging */
@@ -62,6 +65,10 @@ function( Backbone, Communicator  ) {
         pageBack:function(){
             this.ui.bar.removeClass("Header_is-hidden");
             this.ui.back.addClass("Header_is-hidden");
+        },
+        onTapBack: function(){
+            this.pageBack();
+            Communicator.command.execute("backPage:ContentNextRegion");
         },
 
 

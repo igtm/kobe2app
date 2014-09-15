@@ -25,7 +25,7 @@ function( Backbone, Communicator ) {
 
         /*   Drawerをtap時にする共通部分   */
         Private_initializer: function(title, action){ // ①タイトル書き換え ②Drawerの選択 ③Contentの表示
-            Communicator.command.execute("changeTitle:Header", title); // ①タイトル書き換え
+            Communicator.command.execute("changeTitleOnFirstPage:Header", title); // ①タイトル書き換え
             Communicator.command.execute("checkItem:Drawer", action); // ②Drawerの選択 　同じ場合も動作してしまう
             Communicator.command.execute("change:Content", action); // ③Contentの表示 (現pageと違う場合のみ動作)
         },

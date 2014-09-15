@@ -3,9 +3,10 @@ define([
     'communicator',
     'jquery',
     'views/layout/HeaderLayout',
-    'regions/ContentRegion'
+    'regions/ContentRegion',
+    'regions/ContentNextRegion'
     ],
-function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
+function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRegion ) {
     'use strict';
 
 	/* Return a Layout class definition */
@@ -34,7 +35,8 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion  ) {
     	/* Layout sub regions */
     	regions: {
             "header": new HeaderLayout(),
-            "content": new ContentRegion()
+            "content": new ContentRegion(),
+            "contentNext": new ContentNextRegion()
         },
 
     	/* ui selector cache */

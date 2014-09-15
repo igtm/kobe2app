@@ -59,9 +59,6 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
                 remove = true;
             }
             var self = this;
-
-            console.log(category,remove);
-
             Communicator.command.execute("show:loading");
             this.collection.changeCategoryURL(category); // URLの決定
             this.collection.fetch({

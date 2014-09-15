@@ -63,8 +63,8 @@ $DK_font: $EnglishFont;
   right: 0;
   left: 0;
   background: $DK_cColor;
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
+  -webkit-transition: $pagingTransTime ease-in-out;
+  transition: $pagingTransTime ease-in-out;
 }
 
 .Container-isDrawing { //クリック時に付け外しする
