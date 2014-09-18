@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title></title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <link rel="stylesheet" href="styles/main.css">
+        
+
+        <script src="scripts/vendor/modernizr.js"></script>
+
+        <!-- fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Prata" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body>
+
+        <div class="Container">
+            <header class="Header" id="header">
+                <i class="Header_bar fa fa-bars"></i>
+                <i class="Header_back fa fa-chevron-left Header_is-hidden"></i>
+                <div class="Header_title">　</div>
+                <i class="Header_down fa fa-caret-down"></i>
+                <i class="Header_up fa fa-caret-up Header_is-hidden"></i>
+            </header>
+            <div class="DropItems">
+                <div class="DropItem" data-action="all">All</div>
+                <div class="DropItem" data-action="umie">Umie</div>
+                <div class="DropItem" data-action="sanda">三田プレミアム・アウトレット</div>
+                <div class="DropItem" data-action="mitsui">三井アウトレット</div>
+            </div>
+            <div class="Content" id="wrapper"></div>
+            <div class="ContentNext"></div>
+            <div class="Container_mask Container_mask-isHidden"></div>
+        </div>
+        <div class="Drawer" style="display: none">
+            <div class="Drawer_title">Menu
+            </div>
+            <ul class="Drawer_items">
+                <li class="Drawer_item" data-action="home"><i class="fa fa-home fa-fw"></i>Home</li>
+                <li class="Drawer_item" data-action="A">A</li>
+                <li class="Drawer_item" data-action="B">B</li>
+                <li class="Drawer_item" data-action="C">C</li>
+                <li class="Drawer_item" data-action="D">D</li>
+                <li class="Drawer_item" data-action="E">E</li>
+                <li class="Drawer_item" data-action="F">F</li>
+                <li class="Drawer_item" data-action="G">G</li>
+                <li class="Drawer_item" data-action="H">H</li>
+                <li class="Drawer_item" data-action="I">I</li>
+                <li class="Drawer_item" data-action="J">J</li>
+            </ul>
+        </div>
+        <div class="Dialog">
+            <div class="Dialog_loading is-hidden">
+                <i class="Dialog_loading_spinning fa fa-spinner fa-spin fa-3x"></i>
+            </div>
+            <div class="Dialog_confirm is-hidden">
+                <div class="Dialog_confirm_title">警告</div>
+                <div class="Dialog_confirm_content">いいですかねー？そんなことして。</div>
+                <div class="Dialog_confirm_buttons">
+                    <div class="Dialog_confirm_ok button button-ok">OK</div>
+                    <div class="Dialog_confirm_cancel button button-cancel">Cancel</div>
+                </div>
+            </div>
+            <div class="Dialog_alert is-hidden">
+                <div class="Dialog_alert_content">通信エラー</div>
+                <div class="Dialog_alert_buttons">
+                    <div class="Dialog_alert_ok button button-ok">OK</div>
+                </div>
+            </div>
+            <div class="Dialog_mask is-hidden"></div>
+        </div>
+        <div class="Preference"></div>
+
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+
+        <script>document.write('<script src="http://'
+            + (location.host || 'localhost').split(':')[0]
+            + ':35729/livereload.js?snipver=1"><\/script>');
+        </script>
+    </body>
+</html>
