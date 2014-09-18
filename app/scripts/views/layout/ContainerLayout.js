@@ -100,14 +100,17 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRe
 
     /* -----------------------  ドロワー部分 ---------------------------  */
         drawToggle: function(){
+
             switch(this.drawStatus){
                 case 0: // 閉じてる
+                    // $(".Container").css("overflow","visible"); // 【臨時】headerが見えるようにContainerの一番を表示
                     $(".Drawer").css("display",""); // 後ろにあってもfixedの奴は、スクロールの悪さをするので削除しておく
                     this.$el.addClass("Container-isDrawing");
                     this.maskToggle();
                     this.drawStatus = 1;
                     break;
                 case 1: // 開いてる
+                    // $(".Container").css("overflow",""); // 【臨時】headerが見えるようにContainerの一番を表示
                     this.$el.removeClass("Container-isDrawing");
                     this.maskToggle();
                     this.drawStatus = 0;

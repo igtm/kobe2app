@@ -11,7 +11,7 @@ function( Backbone ) {
 		},
 
 		defaults: {
-            "id": null,
+            "eventid": null,
             "title":null,
             "image": null,
             "imageFlag":null,

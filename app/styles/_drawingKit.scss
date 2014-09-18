@@ -33,7 +33,7 @@ $DK_font: $EnglishFont;
   width: 70%;
   color: white;
   position: fixed;
-  overflow: scroll;
+  // overflow: scroll;  // 【臨時】Drawing,pagingしても現在のスクロール位置が変わらないので使用
   -webkit-overflow-scrolling: touch; // 慣性スクロール
   top: 0;
   bottom: 0;
@@ -65,6 +65,9 @@ $DK_font: $EnglishFont;
   background: $DK_cColor;
   -webkit-transition: $pagingTransTime ease-in-out;
   transition: $pagingTransTime ease-in-out;
+  // overflow: scroll;
+  // -webkit-overflow-scrolling: touch; // 慣性スクロール
+
 }
 
 .Container-isDrawing { //クリック時に付け外しする
@@ -77,10 +80,12 @@ $DK_font: $EnglishFont;
 .Container_mask {
   z-index: 1000;
   position: absolute;
-  top: 0;
+  top: 3.5rem;
   bottom: 0;
   right: 0;
   left: 0;
+  // background: black; // 一番上までずれちゃうので、隠す。
+  // opacity: 0.7; // 一番上までずれちゃうので、隠す。
 }
 .Container_mask-isHidden { //初期。付け外しする
   display: none;

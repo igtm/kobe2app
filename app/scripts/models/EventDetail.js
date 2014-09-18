@@ -11,7 +11,7 @@ function( Backbone ) {
 		},
 
 		defaults: {
-            eid:null,
+            eventid:null,
             title: null,
             content:null,
             day:null,

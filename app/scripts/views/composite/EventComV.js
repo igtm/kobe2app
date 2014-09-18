@@ -23,10 +23,6 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
             this.windowHeight = $(window).innerHeight(); // ディスプレイの高さ
             $(window).scroll({self: this},function (e) { // object -> e.dataで受け取れる
                 var loadTop = $(".Content_pullUp").offset().top; // loadTopの位置更新
-
-                console.log(e.data.self.reloadFlag);
-
-
                 if(e.data.self.reloadFlag && $(window).scrollTop()+ e.data.self.windowHeight >= loadTop ){
                     var category = Communicator.reqres.request("getCategory:Container");
                     $(".Content_loading").css("display",""); // loading表示
@@ -35,6 +31,9 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
                     e.data.self.getEventsWithCategory(category,false);
                 }
             });
+
+            // iScroll
+            // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         },
 
     	itemView: Eventitemv,
@@ -47,11 +46,15 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
             'loading': '.Content_loading'
         },
 
+        id: 'scroller',
+
     	/* where are we appending the items views */
     	itemViewContainer: ".Content_items",
 
 		/* Ui events hash */
 		events: {
+        },
+        collectionEvents: {
         },
 
         getEventsWithCategory: function(category, remove){
@@ -60,15 +63,21 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
             }
             var self = this;
             Communicator.command.execute("show:loading");
-            this.collection.changeCategoryURL(category); // URLの決定
+            this.collection.changeCategoryURL(category,this.page); // URLの決定
             this.collection.fetch({
                 data:{page:self.page},
                 remove: remove,
                 success: function(collection, res, options){
-                    console.log("success");
-                    console.log("collection.length:"+collection.length);
-                    console.log(res);
                     Communicator.command.execute("hide:loading");
+                    if(res.length === 10 ){
+                        console.log("collection.length:"+collection.length);
+                        console.log("まだあるから、trueにする");
+                        self.reloadFlag = true; // reloadしても良い状態に戻す（pull to reloadが終了）
+                    }else{
+                        console.log("collection.length:"+collection.length);
+                        console.log("もう無いから、falseにする");
+                        self.reloadFlag = false; // reloadしても良い状態に戻す（pull to reloadが終了）
+                    }
                 },
                 error: function(){
                     console.log("error");
@@ -77,7 +86,6 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
                 },
                 complete: function(){
                     self.incPage();
-                    self.reloadFlag = true; // reloadしても良い状態に戻す（pull to reloadが終了）
                     $(".Content_loading").css("display","none"); // loading非表示
 
                 }
@@ -89,11 +97,26 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
         },
         initPage: function(){
             this.page = 1;
-            console.log("initPageTo"+this.page);
+            self.reloadFlag = true; // reloadしても良い状態に戻す（pull to reloadが終了）
+            console.log("initPageTo"+this.page+"&reloadFlag:true");
+        },
+        setHeight: function() {
+            var headerH = document.getElementById('header').offsetHeight,
+                wrapperH = window.innerHeight - headerH;
+            document.getElementById('wrapper').style.height = wrapperH + 'px';
+        },
+        initIScroll: function(){
+            console.log("DOMContentLoaded");
+            this.setHeight();
+            var myScroll = new iScroll('wrapper', {desktopCompatibility:true});
         },
 
         /* on render callback */
         onRender: function () {
+            // var afterInit = _.bind(this.initIScroll, this);
+            // setTimeout(function(){
+            //     _.defer(afterInit);
+            // },200); // Drawerにかかる時間ms
         }
 
 	});

@@ -26,9 +26,13 @@ function( Backbone, EventitemvTmpl, Communicator  ) {
 		events: {
             'tap .Content_item_image':'nextPage'
         },
+        modelEvents: {
+            "sync": 'render'
+        },
+
         nextPage: function(){
-            console.log("this.model.id:"+this.model.id);
-            Communicator.command.execute("nextPage:ContentNextRegion","home",this.model.id);
+            console.log("this.model.eventid:"+this.model.get('eventid'));
+            Communicator.command.execute("nextPage:ContentNextRegion","home",this.model.get('eventid'));
         },
 
 		/* on render callback */

@@ -17,19 +17,19 @@ function( Backbone, Event ) {
 
         categoryURL: "/list.json", // default
 
-        changeCategoryURL: function(category){
+        changeCategoryURL: function(category ,page){
             switch(category){
                 case "all":
-                    this.categoryURL = "/list.json";
+                    this.categoryURL = "/list/"+page+".json";
                     break;
                 case "umie":
-                    this.categoryURL = "/umie.json";
+                    this.categoryURL = "/umie/"+page+".json";
                     break;
                 case "sanda":
-                    this.categoryURL = "/sanda.json";
+                    this.categoryURL = "/sanda/"+page+".json";
                     break;
                 case "mitsui":
-                    this.categoryURL = "/mitsui.json";
+                    this.categoryURL = "/mitsui/"+page+".json";
                     break;
             }
         },

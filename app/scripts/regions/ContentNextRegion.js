@@ -30,17 +30,19 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator ) {
 
             switch(page){
                 case "home": // home の詳細画面
-                    var model = new EventDetail();
+                    var model = new EventDetail({eventid:id});
 
-                    this.show(new EventDetailItemV({model: model,eid:id}));
+                    this.show(new EventDetailItemV({model: model}));
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
+                    $('.Content').addClass('Content_is-paging');
                     $('.Container').css("overflow-y","hidden");
                     break;
             }
         },
         backPage: function(page){
             $('.ContentNext').removeClass('ContentNext-isPaging');
+            $('.Content').removeClass('Content_is-paging');
             $('.Container').css("overflow-y","");
             this.close();
         }

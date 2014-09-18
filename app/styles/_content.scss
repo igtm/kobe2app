@@ -4,6 +4,8 @@
   width: 100%;
   position: absolute;
   top:3.5rem; // header padding:1rem height:2.5rem
+  -webkit-transition: $pagingTransTime ease-out;
+  transition: $pagingTransTime ease-out;
 }
 .Content_items {
   background-color: $Container_backColor;
@@ -63,6 +65,34 @@
   color: #fff;
   white-space: normal; // 入りきらない部分は自動的に改行して表示
 }
+// image無いやつ
+.Content_item_categoryWithoutImage {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: .9;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: Prata;
+  text-align: center;
+  line-height: 1.8rem;
+  z-index: 1;
+}
+.Content_item_textWithoutImage {
+  padding: 10%;
+  padding-left: 38px;
+  white-space: normal; // 入りきらない部分は自動的に改行して表示
+}
+/* -- paging  --  */
+.Content_is-paging {
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
+
 
 /* -- pullUp  --  */
 .Content_pullUp {

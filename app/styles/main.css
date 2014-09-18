@@ -6514,7 +6514,6 @@ Loft.gitのbackgroundcolor
   width: 70%;
   color: white;
   position: fixed;
-  overflow: scroll;
   -webkit-overflow-scrolling: touch;
   top: 0;
   bottom: 0; }
@@ -6554,7 +6553,7 @@ Loft.gitのbackgroundcolor
 .Container_mask {
   z-index: 1000;
   position: absolute;
-  top: 0;
+  top: 3.5rem;
   bottom: 0;
   right: 0;
   left: 0; }
@@ -6643,7 +6642,9 @@ Loft.gitのbackgroundcolor
 .Content {
   width: 100%;
   position: absolute;
-  top: 3.5rem; }
+  top: 3.5rem;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out; }
 
 .Content_items {
   background-color: #eceef1;
@@ -6700,6 +6701,32 @@ Loft.gitのbackgroundcolor
   opacity: .6;
   color: #fff;
   white-space: normal; }
+
+.Content_item_categoryWithoutImage {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: .9;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: Prata;
+  text-align: center;
+  line-height: 1.8rem;
+  z-index: 1; }
+
+.Content_item_textWithoutImage {
+  padding: 10%;
+  padding-left: 38px;
+  white-space: normal; }
+
+/* -- paging  --  */
+.Content_is-paging {
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0); }
 
 /* -- pullUp  --  */
 .Content_pullUp {

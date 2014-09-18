@@ -14,7 +14,7 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 
             var self = this;
             this.model.fetch({
-                data:{id:self.model.eid},
+                data:{id:self.model.eventid},
                 success: function(model, res, options){
                     console.log("success");
                     console.log(res);
