@@ -2,9 +2,11 @@ define([
 	'backbone',
     'models/EventDetail',
     'views/item/EventDetailItemV',
-    'communicator'
+    'communicator',
+    'models/ShopDetail',
+    'views/item/ShopDetailItemV'
 ],
-function( Backbone, EventDetail, EventDetailItemV, Communicator ) {
+function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, ShopDetailItemV ) {
     'use strict';
     /*
         次ページの機能
@@ -34,6 +36,16 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator ) {
                     model.set({eventid:id});
 
                     this.show(new EventDetailItemV({model: model}));
+                    Communicator.command.execute("pageNext:Header");
+                    $('.ContentNext').addClass('ContentNext-isPaging');
+                    $('.Content').addClass('Content_is-paging');
+                    $('.Container').css("overflow-y","hidden");
+                    break;
+                case "shops": // shops の詳細画面
+                    var model = new ShopDetail();
+                    model.set({eventid:id});
+
+                    this.show(new ShopDetailItemV({model: model}));
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
                     $('.Content').addClass('Content_is-paging');

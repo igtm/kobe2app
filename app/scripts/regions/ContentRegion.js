@@ -2,9 +2,11 @@ define([
 	'backbone',
     'communicator',
     'views/composite/EventComV',
-    'collections/Events'
+    'collections/Events',
+    'views/composite/ShopComV',
+    'collections/Shops'
     ],
-function( Backbone, Communicator, EventComV, Events ) {
+function( Backbone, Communicator, EventComV, Events, ShopComV, Shops ) {
     'use strict';
 
 	/* Return a Region class definition */
@@ -25,6 +27,9 @@ function( Backbone, Communicator, EventComV, Events ) {
             switch(page){
                 case "home":
                     this.show(new EventComV({collection: new Events()}));
+                    break;
+                case "shops":
+                    this.show(new ShopComV({collection: new Shops()}));
                     break;
                 default:
                     Communicator.command.execute("initPage:EventComV"); // page 1 に初期化

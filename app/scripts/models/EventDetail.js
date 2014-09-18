@@ -19,7 +19,7 @@ function( Backbone ) {
             image:null
         },
 
-        baseURL: 'http://54.64.141.117:3000/event/show',
+        baseURL: 'http://54.64.141.117:3000/event/show/',
 
         idURL: 1, // default
 

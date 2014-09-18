@@ -1,9 +1,8 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/EventDetailItemV_tmpl',
-    'communicator'
+	'hbs!tmpl/item/EventDetailItemV_tmpl'
 ],
-function( Backbone, EventdetailitemvTmpl, Communicator  ) {
+function( Backbone, EventdetailitemvTmpl  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
@@ -11,23 +10,6 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 
 		initialize: function() {
 			console.log("initialize a Eventdetailitemv ItemView");
-            this.model.changeIdURL(this.model.get("eventid"));
-            var self = this;
-                self.model.fetch({
-                    data:{id:self.model.get("eventid")},
-                    success: function(model, res, options){
-                        console.log("success");
-                        console.log(res);
-                        Communicator.command.execute("hide:loading");
-                    },
-                    error: function(){
-                        Communicator.command.execute("hide:loading");
-                        Communicator.command.execute("show:alert","通信エラー");
-                    },
-                    complete: function(){
-
-                    }
-                })
 		},
 		
     	template: EventdetailitemvTmpl,
@@ -38,10 +20,6 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 
 		/* Ui events hash */
 		events: {},
-
-        modelEvents: {
-            'sync':'render'
-        },
 
 		/* on render callback */
 		onRender: function() {}

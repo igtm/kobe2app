@@ -11,13 +11,20 @@ function( Backbone, Communicator ) {
 			console.log("initialize a Routercontroller Controller");
 		},
         home: function(){
-            this.Private_initializer("all","home");
+            this.Private_initializer("Events","home");
             this.Private_getEvents("all");
         },
         homeWithCategory: function(category){
             this.Private_initializer(category,"home");
             this.Private_getEvents(category);
         },
+
+        shops: function(){
+            this.Private_initializer("Shops","shops");
+            this.Private_getShops("all");
+        },
+
+
         page: function(page) {
             this.Private_initializer(page,page);
         },
@@ -33,6 +40,12 @@ function( Backbone, Communicator ) {
             Communicator.command.execute("modifyCategoryVariable:Container",category); // ①DropItemsのStatusを現Categoryに更新
             Communicator.command.execute("initPage:EventComV"); // page 1 に初期化
             Communicator.command.execute("getEventsWithCategory:EventComV",category); // ②getEventsWithCategory
+
+        },
+        Private_getShops: function(category){ // ①DropItemsのStatusを現Categoryに更新 ②getEventsWithCategory
+            Communicator.command.execute("modifyCategoryVariable:Container",category); // ①DropItemsのStatusを現Categoryに更新
+            Communicator.command.execute("initPage:ShopsComV"); // page 1 に初期化
+            Communicator.command.execute("getShopsWithCategory:ShopsComV",category); // ②getShopsWithCategory
 
         }
 	});

@@ -15,6 +15,8 @@ function(Backbone, Communicator){
             '':'home',
             'home':'home',
             'home/:category':'homeWithCategory',
+
+            'shops':'shops',
             ':page':'page' // 仮実装
         },
 
