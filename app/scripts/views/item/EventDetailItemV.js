@@ -13,21 +13,21 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 			console.log("initialize a Eventdetailitemv ItemView");
 
             var self = this;
-            this.model.fetch({
-                data:{id:self.model.eventid},
-                success: function(model, res, options){
-                    console.log("success");
-                    console.log(res);
-                    Communicator.command.execute("hide:loading");
-                },
-                error: function(){
-                    Communicator.command.execute("hide:loading");
-                    Communicator.command.execute("show:alert","通信エラー");
-                },
-                complete: function(){
+                self.model.fetch({
+                    data:{id:self.model.get("eventid")},
+                    success: function(model, res, options){
+                        console.log("success");
+                        console.log(res);
+                        Communicator.command.execute("hide:loading");
+                    },
+                    error: function(){
+                        Communicator.command.execute("hide:loading");
+                        Communicator.command.execute("show:alert","通信エラー");
+                    },
+                    complete: function(){
 
-                }
-            });
+                    }
+                })
 		},
 		
     	template: EventdetailitemvTmpl,
@@ -38,6 +38,10 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 
 		/* Ui events hash */
 		events: {},
+
+        modelEvents: {
+            'sync':'render'
+        },
 
 		/* on render callback */
 		onRender: function() {}

@@ -30,7 +30,8 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator ) {
 
             switch(page){
                 case "home": // home の詳細画面
-                    var model = new EventDetail({eventid:id});
+                    var model = new EventDetail();
+                    model.set({eventid:id});
 
                     this.show(new EventDetailItemV({model: model}));
                     Communicator.command.execute("pageNext:Header");
