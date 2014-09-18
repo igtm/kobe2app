@@ -19,20 +19,17 @@ function( Backbone ) {
             image:null
         },
 
-        url: 'http://i-and-i.main.jp/API/testServer/kobe2app/getEvent.php'
-        /*       baseURL: 'http://54.64.141.117:3000/event/show',
+        baseURL: 'http://54.64.141.117:3000/event/show',
 
-                 idURL: 1, // default
+        idURL: 1, // default
 
-                 changeIdURL: function(idURL){
-                    this.idURL = idURL+".json";
-                    console.log("idURL is changed");
-                 },
+        changeIdURL: function(idURL){
+              this.idURL = idURL+".json";
+              console.log("idURL is changed");
+        },
 
-                 url: function(){
-                    return this.baseURL+this.idURL;
-                 },
-        */
-
-         });
+        url: function(){
+              return this.baseURL+this.idURL;
+        }
+    });
 });

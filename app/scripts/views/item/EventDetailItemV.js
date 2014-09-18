@@ -11,7 +11,7 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
 
 		initialize: function() {
 			console.log("initialize a Eventdetailitemv ItemView");
-
+            this.model.changeIdURL(this.model.get("eventid"));
             var self = this;
                 self.model.fetch({
                     data:{id:self.model.get("eventid")},
