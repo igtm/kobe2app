@@ -48,10 +48,8 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                             $(".Content_loading").css("display", "none"); // loading非表示
                         }
                     });
-                    setTimeout(function(){
-                        console.log(model);
-                        self.show(new EventDetailItemV({model: model}));
-                    },2000);
+
+                    this.show(new EventDetailItemV({model:model}));
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
                     $('.Content').addClass('Content_is-paging');
@@ -84,6 +82,7 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
             }
         },
         backPage: function(page){
+            $(".Header_title").removeClass("Header_nextTitle"); // EventDetailItemV 内のchangeTitleで小さくしたfont-sizeを戻す。
             $('.ContentNext').removeClass('ContentNext-isPaging');
             $('.Content').removeClass('Content_is-paging');
             $('.Container').css("overflow-y","");

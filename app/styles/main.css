@@ -6477,15 +6477,19 @@ Loft.gitのbackgroundcolor
   background-color: #9e9e9e; }
 
 /* Category Color left */
-.categoryColor_umie {
+.categoryColor_Feelkobe {
+  border-right: solid 3px #0E7AC4;
+  color: #0E7AC4; }
+
+.categoryColor_Umie {
   border-right: solid 3px #40AAEF;
   color: #40AAEF; }
 
-.categoryColor_sanda {
+.categoryColor_Sanda {
   border-right: solid 3px #F27398;
   color: #F27398; }
 
-.categoryColor_mitsui {
+.categoryColor_Mitsui {
   border-right: solid 3px #FBA848;
   color: #FBA848; }
 
@@ -6586,14 +6590,22 @@ Loft.gitのbackgroundcolor
 
 .Header_title {
   line-height: 40px;
-  font-size: 24px;
+  font-size: 22px;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 60%;
-  text-align: center; }
+  width: 65%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; }
+
+.Header_nextTitle {
+  font-size: 18px; }
 
 .Header_down, .Header_up {
   position: absolute;
@@ -6623,7 +6635,7 @@ Loft.gitのbackgroundcolor
 .Header_is-hidden {
   height: 0;
   opacity: 0;
-  z-index: 6; }
+  z-index: 5 -1; }
 
 .DropItems {
   position: fixed;
@@ -6667,7 +6679,7 @@ Loft.gitのbackgroundcolor
   overflow: hidden;
   white-space: nowrap;
   border-bottom: 1px solid #e3e3e3;
-  margin: 8 0;
+  margin: 8px 0;
   text-overflow: ellipsis;
   -webkit-text-overflow: ellipsis;
   height: 27%; }
@@ -6756,41 +6768,30 @@ Loft.gitのbackgroundcolor
   font-size: 32px; }
 
 .ContentNext {
-  width: 100%;
+  width: 94%;
+  padding: 3%;
   position: fixed;
   z-index: 2;
   top: 3.5rem;
   bottom: 0;
   left: 100%;
-  background-color: #eceef1;
+  background-color: white;
   -webkit-transition: 200ms ease-in;
   transition: 200ms ease-in; }
 
 .ContentNext-isPaging {
-  left: 0; }
+  left: 0;
+  overflow: scroll;
+  position: absolute; }
 
 /* event */
-.ContentNext_item_image {
-  margin-left: 31px; }
+.ContentNext_title {
+  font-weight: bold; }
 
-.ContentNext_item_category {
-  writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  height: 100%;
-  opacity: .9;
-  font-size: 28px;
-  font-weight: 700;
-  font-family: Prata;
-  text-align: left;
-  line-height: 1.8rem;
-  padding-top: 5%;
-  z-index: 1; }
+.ContentNext_image {
+  text-align: center; }
 
-.ContentNext_item_text {
+.ContentNext_content {
   margin-top: 3.5rem;
   background: #ffffff;
   white-space: normal; }

@@ -17,6 +17,7 @@ function( Backbone, Communicator  ) {
             /* Paging ページ送り */
             Communicator.command.setHandler("pageNext:Header",this.pageNext,this);
             Communicator.command.setHandler("pageBack:Header",this.pageBack,this);
+            Communicator.command.setHandler("changeTitleOnNextPage:Header",this.changeTitleOnNextPage,this);
             this.firstPageTitle = undefined;
 
             /* DropItems カテゴリ */
@@ -50,6 +51,7 @@ function( Backbone, Communicator  ) {
         },
         /* DropDown */
         onTapTitle: function(){
+            if(this.ui.title.hasClass("Header_nextTitle")){return;} // 詳細ページなのでドロップしない
             Communicator.command.execute("toggleDropItems:Container");
         },
         changeTitleOnFirstPage:function(category){
@@ -65,14 +67,24 @@ function( Backbone, Communicator  ) {
         pageBack:function(){
             this.ui.bar.removeClass("Header_is-hidden");
             this.ui.back.addClass("Header_is-hidden");
+            this.rewriteTitleOnNextPage();
         },
         onTapBack: function(){
             this.pageBack();
             Communicator.command.execute("backPage:ContentNextRegion");
         },
+        changeTitleOnNextPage:function(title){
+            $(".Header_down").addClass("Header_is-hidden");
+            this.ui.title.text(title);
+        },
+        rewriteTitleOnNextPage:function(){
+            $(".Header_down").removeClass("Header_is-hidden");
+            this.ui.title.text(this.firstPageTitle);
+        },
 
 
-		/* on render callback */
+
+        /* on render callback */
 		onRender: function() {}
 	});
 

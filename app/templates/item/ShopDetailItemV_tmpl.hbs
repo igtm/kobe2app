@@ -1,2 +1,7 @@
-<img src="{{image}}" alt=""/>
-<div>{{title}}{{content}}</div>
+{{#if imageFlag}}
+    <div class="ContentNext_image"><img src="{{image}}" alt=""/></div>
+{{else}}
+    <div class="ContentNext_image"><img class="ContentNext_image" src="images/NoImage.jpg" alt=""/></div>
+{{/if}}
+<div class="ContentNext_title">{{title}}</div>
+<div class="ContentNext_content">{{content}}</div>

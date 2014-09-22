@@ -1,9 +1,10 @@
 define([
 	'backbone',
 	'hbs!tmpl/item/EventDetailItemV_tmpl',
-    'communicator'
+    'communicator',
+    'models/EventDetail'
 ],
-function( Backbone, EventdetailitemvTmpl, Communicator  ) {
+function( Backbone, EventdetailitemvTmpl, Communicator, EventDetail  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
@@ -24,8 +25,14 @@ function( Backbone, EventdetailitemvTmpl, Communicator  ) {
         },
 
         modelEvents: {
+            'sync':'changeTitle'
         },
 
+        changeTitle: function(){
+            this.render();
+            Communicator.command.execute("changeTitleOnNextPage:Header",this.model.get("title"));
+            $(".Header_title").addClass("Header_nextTitle"); // font-size小さく
+        },
 		/* on render callback */
 		onRender: function() {}
 	});
