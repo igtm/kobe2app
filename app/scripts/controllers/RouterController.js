@@ -11,11 +11,16 @@ function( Backbone, Communicator ) {
 			console.log("initialize a Routercontroller Controller");
 		},
         home: function(){
-            this.Private_initializer("Events","home");
+            this.Private_initializer("全てのイベント","home");
             this.Private_getEvents("all");
         },
         homeWithCategory: function(category){
-            this.Private_initializer(category,"home");
+            var title;
+            if(category=="all"){title="全てのイベント"}
+            if(category=="umie"){title="Umie"}
+            if(category=="sanda"){title="三田プレミアム"}
+            if(category=="mitsui"){title="三井アウトレット"}
+            this.Private_initializer(title,"home");
             this.Private_getEvents(category);
         },
 

@@ -1,19 +1,20 @@
 define([
 	'backbone',
-	'views/item/EventItemV',
-	'hbs!tmpl/composite/EventComV_tmpl',
+	'views/item/ShopItemV',
+	'hbs!tmpl/composite/ShopComV_tmpl',
     'communicator',
     'iscroll'
 ],
-function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
+function( Backbone, Shopitemv, ShopcomvTmpl, Communicator, iScroll  ) {
     'use strict';
 
 	/* Return a CompositeView class definition */
 	return Backbone.Marionette.CompositeView.extend({
 
 		initialize: function() {
-            Communicator.command.setHandler("getEventsWithCategory:EventComV",this.getEventsWithCategory,this); // getEventsWithCategory
-            Communicator.command.setHandler("initPage:EventComV",this.initPage,this);
+			console.log("initialize a Shopcomv CompositeView");
+            Communicator.command.setHandler("initPage:ShopsComV",this.initPage,this); // page 1 に初期化
+            Communicator.command.setHandler("getShopsWithCategory:ShopsComV",this.getShopsWithCategory,this); // ②getShopsWithCategory
             this.bindUIElements();
 
             this.page = 1;
@@ -28,19 +29,20 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
                     $(".Content_loading").css("display",""); // loading表示
                     e.data.self.reloadFlag = false; // 再びreload出来ないようにする
                     console.log('読み込み中…');
-                    e.data.self.getEventsWithCategory(category,false);
+                    e.data.self.getShopsWithCategory(category,false);
                 }
             });
 
-            // iScroll
-            // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+
         },
-
-    	itemView: Eventitemv,
+		
+    	itemView: Shopitemv,
     	
-    	template: EventcomvTmpl,
+    	template: ShopcomvTmpl,
+    	
 
-        /* ui selector cache */
+    	/* ui selector cache */
     	ui: {
             'load': '.Content_pullUp',
             'loading': '.Content_loading'
@@ -48,16 +50,13 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
 
         id: 'scroller',
 
-    	/* where are we appending the items views */
+        /* where are we appending the items views */
     	itemViewContainer: ".Content_items",
 
 		/* Ui events hash */
-		events: {
-        },
-        collectionEvents: {
-        },
+		events: {},
 
-        getEventsWithCategory: function(category, remove){
+        getShopsWithCategory: function(category, remove){
             if(typeof remove === 'undefined'){
                 remove = true;
             }
@@ -83,7 +82,6 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
                 error: function(){
                     console.log("error");
                     Communicator.command.execute("hide:loading");
-                    self.reloadFlag = false;
                     Communicator.command.execute("show:alert","通信エラー");
                 },
                 complete: function(){
@@ -124,11 +122,8 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
             $(".Content_item").css("height", itemH);
             $(".Content_item_image img").css("height", itemH);
         },
-
-        /* on render callback */
-        onRender: function () {
-        }
-
+		/* on render callback */
+		onRender: function() {}
 	});
 
 });

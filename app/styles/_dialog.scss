@@ -47,7 +47,7 @@
 /* alert */
 .Dialog_alert {
   z-index: $Dialog_zIndex;
-  position: absolute;
+  position: fixed;
   top: 30%;
   left: 10%;
   width: 80%;
@@ -68,7 +68,7 @@
 .Dialog_mask {
   z-index: $Dialog_zIndex - 1;
   background-color: #000000;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;

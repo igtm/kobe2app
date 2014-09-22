@@ -13,7 +13,7 @@
   position: fixed;
 }
 .Header_bar, .Header_back { // 大きさ・色とかの設定のみ
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   position: absolute;
   top: 30%;
   left: 6%;
@@ -21,13 +21,13 @@
 }
 .Header_title {
   line-height: 40px;
-  font-size: 28px;
+  font-size: 24px;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 45%;
+  width: 60%;
   text-align: center;
 }
 .Header_down, .Header_up {
@@ -40,6 +40,13 @@
   font-size: 1.1rem;
   text-align: center;
 }
+.Header_rightButton { // 大きさ・色とかの設定のみ
+  font-size: 2.1rem;
+  position: absolute;
+  top: 30%;
+  right: 6%;
+  z-index: $Header_zIndex +2;
+}
 // transition
 .Header_bar, .Header_down { // もともと付いてるやつ
   -webkit-transition: $pagingTransTime;
@@ -49,7 +56,7 @@
   -webkit-transition: $pagingTransTime;
   transition: $pagingTransTime;
 }
-.Header_is-hidden { // 付けたり外したりする
+.Header_is-hidden { // 付けたり外したりする。transitionではdisplayがきかないのでheight,opacityで代用。
   height: 0;
   opacity: 0;
   z-index: $Header_zIndex +1; // header_bar と header_backが完全には消えてないので後ろに回す。
@@ -69,9 +76,10 @@
   transition: 300ms;
 }
 .DropItem {
-  font-size: 22px;
-  text-align: center;
+  font-size: 20px;
+  text-align: left;
   padding: 4% 0;
+  padding-left: 6%;
   border-bottom: solid 1px #ffffff;
 }
 .DropItems_is-shown {

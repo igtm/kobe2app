@@ -21,7 +21,7 @@ function( Backbone ) {
 
         baseURL: 'http://54.64.141.117:3000/event/show/',
 
-        idURL: 1, // default
+        idURL: "1.json", // default
 
         changeIdURL: function(idURL){
               this.idURL = idURL+".json";
@@ -29,7 +29,13 @@ function( Backbone ) {
         },
 
         url: function(){
+            console.log("URLis:"+this.baseURL+this.idURL);
               return this.baseURL+this.idURL;
+        },
+
+        parse: function(res){
+            console.log(res);
+            return res;
         }
     });
 });

@@ -1,0 +1,8 @@
+{{#if imageFlag}}
+    <div class="Content_item_image"><img src="{{image}}"/></div>
+    <div class="Content_item_category categoryColor_{{category}}">{{category}}</div>
+    <div class="Content_item_text">{{title}}</div>
+{{else}}
+    <div class="Content_item_categoryWithoutImage categoryColor_{{category}}">{{category}}</div>
+    <div class="Content_item_textWithoutImage">{{title}}</div>
+{{/if}}

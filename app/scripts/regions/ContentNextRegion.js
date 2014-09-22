@@ -28,14 +28,30 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
 
         nextPage: function(page, id){ // Event:id model itemview作成
             var self = this;
-            Communicator.command.execute("show:loading");
 
             switch(page){
                 case "home": // home の詳細画面
                     var model = new EventDetail();
-                    model.set({eventid:id});
+                    model.changeIdURL(id);
 
-                    this.show(new EventDetailItemV({model: model}));
+                    Communicator.command.execute("show:loading");
+                    model.fetch({
+                        success: function() {
+                            Communicator.command.execute("hide:loading");
+                        },
+                        error: function () {
+                            console.log("error");
+                            Communicator.command.execute("hide:loading");
+                            Communicator.command.execute("show:alert", "通信エラー");
+                        },
+                        complete: function () {
+                            $(".Content_loading").css("display", "none"); // loading非表示
+                        }
+                    });
+                    setTimeout(function(){
+                        console.log(model);
+                        self.show(new EventDetailItemV({model: model}));
+                    },2000);
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
                     $('.Content').addClass('Content_is-paging');
@@ -43,7 +59,21 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                     break;
                 case "shops": // shops の詳細画面
                     var model = new ShopDetail();
-                    model.set({eventid:id});
+                    model.changeIdURL(id);
+                    model.fetch({
+                        success: function(model) {
+                            console.log(model);
+                            Communicator.command.execute("hide:loading");
+                        },
+                        error: function () {
+                            console.log("error");
+                            Communicator.command.execute("hide:loading");
+                            Communicator.command.execute("show:alert", "通信エラー");
+                        },
+                        complete: function () {
+                            $(".Content_loading").css("display", "none"); // loading非表示
+                        }
+                    });
 
                     this.show(new ShopDetailItemV({model: model}));
                     Communicator.command.execute("pageNext:Header");

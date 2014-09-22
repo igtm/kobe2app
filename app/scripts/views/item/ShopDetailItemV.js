@@ -1,30 +1,25 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/EventDetailItemV_tmpl',
-    'communicator'
+	'hbs!tmpl/item/ShopDetailItemV_tmpl'
 ],
-function( Backbone, EventdetailitemvTmpl, Communicator  ) {
+function( Backbone, ShopdetailitemvTmpl  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
 	return Backbone.Marionette.ItemView.extend({
 
 		initialize: function() {
-			console.log("initialize a Eventdetailitemv ItemView");
+			console.log("initialize a Shopdetailitemv ItemView");
 		},
 		
-    	template: EventdetailitemvTmpl,
+    	template: ShopdetailitemvTmpl,
         
 
     	/* ui selector cache */
     	ui: {},
 
 		/* Ui events hash */
-		events: {
-        },
-
-        modelEvents: {
-        },
+		events: {},
 
 		/* on render callback */
 		onRender: function() {}
