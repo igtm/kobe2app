@@ -32,3 +32,11 @@
   background: #ffffff;
   white-space: normal; // 入りきらない部分は自動的に改行して表示
 }
+.ContentNext_refer {
+  white-space: normal; // 入りきらない部分は自動的に改行して表示
+  word-break: break-all;// 文字が続いてても自動改行
+}
+.ContentNext_refer > a {
+  font-size: 0.85rem;
+  color: #808080;
+}

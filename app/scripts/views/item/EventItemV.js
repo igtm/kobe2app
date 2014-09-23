@@ -24,7 +24,8 @@ function( Backbone, EventitemvTmpl, Communicator  ) {
 
 		/* Ui events hash */
 		events: {
-            'tap .Content_item_image':'nextPage'
+            'tap .Content_item_image':'nextPage',
+            'tap .Content_item_text':'nextPage'
         },
         modelEvents: {
             "sync": 'render'

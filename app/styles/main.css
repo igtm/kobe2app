@@ -6459,6 +6459,9 @@ Eclipse
 #E9EAEE
 Loft.gitのbackgroundcolor
 */
+a, a:hover, a:focus {
+  text-decoration: none; }
+
 .is-hidden {
   display: none; }
 
@@ -6635,7 +6638,7 @@ Loft.gitのbackgroundcolor
 .Header_is-hidden {
   height: 0;
   opacity: 0;
-  z-index: 5 -1; }
+  z-index: 4; }
 
 .DropItems {
   position: fixed;
@@ -6795,6 +6798,14 @@ Loft.gitのbackgroundcolor
   margin-top: 3.5rem;
   background: #ffffff;
   white-space: normal; }
+
+.ContentNext_refer {
+  white-space: normal;
+  word-break: break-all; }
+
+.ContentNext_refer > a {
+  font-size: 0.85rem;
+  color: #808080; }
 
 .Dialog_loading {
   z-index: 10;

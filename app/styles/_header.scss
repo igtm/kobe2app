@@ -67,7 +67,7 @@
 .Header_is-hidden { // 付けたり外したりする。transitionではdisplayがきかないのでheight,opacityで代用。
   height: 0;
   opacity: 0;
-  z-index: $Header_zIndex -1; // header_bar と header_backが完全には消えてないので後ろに回す。
+  z-index: $Header_zIndex - 1; // header_bar と header_backが完全には消えてないので後ろに回す。
 }
 
 // ======= header dropItems ========= //
