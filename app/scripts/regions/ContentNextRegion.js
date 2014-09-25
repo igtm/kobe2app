@@ -28,13 +28,12 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
 
         nextPage: function(page, id){ // Event:id model itemview作成
             var self = this;
+            Communicator.command.execute("show:loading");
 
             switch(page){
-                case "home": // home の詳細画面
+                case "event": // home の詳細画面
                     var model = new EventDetail();
                     model.changeIdURL(id);
-
-                    Communicator.command.execute("show:loading");
                     model.fetch({
                         success: function() {
                             Communicator.command.execute("hide:loading");
@@ -59,8 +58,7 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                     var model = new ShopDetail();
                     model.changeIdURL(id);
                     model.fetch({
-                        success: function(model) {
-                            console.log(model);
+                        success: function() {
                             Communicator.command.execute("hide:loading");
                         },
                         error: function () {

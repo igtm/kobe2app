@@ -33,7 +33,7 @@ function( Backbone, EventitemvTmpl, Communicator  ) {
 
         nextPage: function(){
             console.log("this.model.eventid:"+this.model.get('eventid'));
-            Communicator.command.execute("nextPage:ContentNextRegion","home",this.model.get('eventid'));
+            Communicator.command.execute("nextPage:ContentNextRegion","event",this.model.get('eventid'));
         },
 
 		/* on render callback */

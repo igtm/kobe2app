@@ -24,10 +24,10 @@ function( Backbone, Eventitemv, EventcomvTmpl, Communicator, iScroll  ) {
             $(window).scroll({self: this},function (e) { // object -> e.dataで受け取れる
                 var loadTop = $(".Content_pullUp").offset().top; // loadTopの位置更新
                 if(e.data.self.reloadFlag && $(window).scrollTop()+ e.data.self.windowHeight >= loadTop ){
+                    e.data.self.reloadFlag = false; // 再びreload出来ないようにする
                     var category = Communicator.reqres.request("getCategory:Container");
                     $(".Content_loading").css("display",""); // loading表示
-                    e.data.self.reloadFlag = false; // 再びreload出来ないようにする
-                    console.log('読み込み中…');
+                    console.log('EventComV読み込み中…');
                     e.data.self.getEventsWithCategory(category,false);
                 }
             });

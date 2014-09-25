@@ -20,6 +20,12 @@ require.config({
         },
         'zepto.touch' : {
             deps: ['jquery']
+        },
+        "jquery.glide" : {
+            deps: ['jquery']
+        },
+        "jquery.flexslider" : {
+            deps: ['jquery']
         }
     },
 
@@ -46,6 +52,8 @@ require.config({
         /* vender */
         'zepto.touch': 'vendor/zepto.touch',
         iscroll: 'vendor/iscroll',
+        "jquery.glide": 'vendor/jquery.glide.min',
+        "jquery.flexslider": 'vendor/jquery.flexslider-min',
 
 
         /* require handlebars plugin - Alex Sexton */

@@ -17,7 +17,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRe
             this.bindUIElements();
             // Communicator
             Communicator.command.setHandler("DrawToggle:Container",this.drawToggle,this); // <- HeaderLayout
-            Communicator.reqres.setHandler("getCategory:Container",this.getCategory,this); // <- EventComV
+            Communicator.reqres.setHandler("getCategory:Container",this.getCategory,this); // <- EventComV header
 
 
             // status
@@ -68,13 +68,14 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRe
              ③Routeに応じて、headerTitleの変更を行う。
              */
             this.toggleDropItems();
+            var content = $(e.currentTarget).attr("data-content");
             var category = $(e.currentTarget).attr("data-action");
             if(category == this.currentCategory){return ;}// 同じの押した
             this.currentCategory = category; // 前見ていた履歴を保存できればいいけどなー
             if(category == "all"){
-                var url = "home"
+                var url = content;
             }else{
-                var url = "home/"+category;
+                var url = content+"/"+category;
             }
             Communicator.command.execute("navigate:Router",url); // Routingする
         },

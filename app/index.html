@@ -32,39 +32,50 @@
     <body>
 
         <div class="Container">
+            <div class="Start Start-isHidden">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li><img src="images/kobe1.jpg" /></li>
+                        <li><img src="images/kobe2.jpg" /></li>
+                        <li><img src="images/kobe3.jpg" /></li>
+                        <li><img id="lastImage" src="images/kobe4.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
             <header class="Header" id="header">
                 <i class="Header_bar fa fa-bars"></i>
                 <i class="Header_back fa fa-chevron-left Header_is-hidden"></i>
                 <div class="Header_title">　</div>
                 <i class="Header_down fa fa-caret-down"></i>
                 <i class="Header_up fa fa-caret-up Header_is-hidden"></i>
+                <div class="Header_rightButton Header_rightButton-isHidden">近い順</div>
             </header>
             <div class="DropItems">
-                <div class="DropItem" id="DropItem_1" data-action="all">全てのEvent</div>
-                <div class="DropItem" id="DropItem_2" data-action="umie">- Umie</div>
-                <div class="DropItem" id="DropItem_3" data-action="sanda">- 三田プレミアム・アウトレット</div>
-                <div class="DropItem" id="DropItem_4" data-action="mitsui">- 三井アウトレット</div>
+                <div class="DropItem" id="DropItem_1" data-content="event" data-action="all">全てのEvent</div>
+                <div class="DropItem" id="DropItem_2" data-content="event" data-action="umie">- Umie</div>
+                <div class="DropItem" id="DropItem_3" data-content="event" data-action="sanda">- 三田プレミアム・アウトレット</div>
+                <div class="DropItem" id="DropItem_4" data-content="event" data-action="mitsui">- 三井アウトレット</div>
             </div>
             <div class="Content" id="wrapper"></div>
             <div class="ContentNext"></div>
             <div class="Container_mask Container_mask-isHidden"></div>
         </div>
         <div class="Drawer" style="display: none;">
-            <div class="Drawer_title">Menu
+            <div class="Drawer_title">Menu <i class="Drawer_icon fa fa-home" data-action="start"></i>
             </div>
             <ul class="Drawer_items">
-                <li class="Drawer_item" data-action="home"><i class="fa fa-home fa-fw"></i>Home</li>
-                <li class="Drawer_item" data-action="shops">Shops</li>
-                <li class="Drawer_item" data-action="B">B</li>
-                <li class="Drawer_item" data-action="C">C</li>
-                <li class="Drawer_item" data-action="D">D</li>
-                <li class="Drawer_item" data-action="E">E</li>
-                <li class="Drawer_item" data-action="F">F</li>
-                <li class="Drawer_item" data-action="G">G</li>
-                <li class="Drawer_item" data-action="H">H</li>
-                <li class="Drawer_item" data-action="I">I</li>
-                <li class="Drawer_item" data-action="J">J</li>
+                <li class="Drawer_item" data-action="event">イベント</li>
+                <li class="Drawer_item" data-action="shops">ショップ</li>
             </ul>
+            <div class="Drawer_staff">
+                Powered By <a href="https://www.facebook.com/CareerHub">Career Hub</a>.<br>
+                Created By<br>
+                <a href="https://www.facebook.com/tomokatsu.iguchi">Iguchi</a> (Front・UI)<br>
+                <a href="https://www.facebook.com/kohji.inoue.7">Inoue</a> (Back・DB)<br>
+                <a href=""></a>Tadahira(Back・DB)<br>
+                <a href="https://www.facebook.com/yanohararyoubu">Nobuhara</a> (Back・DB).<br>
+                Copyright © 2014 おしゃれ神戸 All Right Reserve.
+            </div>
         </div>
         <div class="Dialog">
             <div class="Dialog_loading is-hidden">

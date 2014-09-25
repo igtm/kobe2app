@@ -30,7 +30,11 @@ function( Backbone ) {
 
         url: function(){
             return this.baseURL+this.idURL;
-        }
+        },
 
+        parse: function(res) {
+            console.log(res);
+            return res;
+        }
     });
 });

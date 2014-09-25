@@ -17,20 +17,42 @@ function( Backbone, Shop ) {
 
         categoryURL: "/list.json", // default
 
-        changeCategoryURL: function(category ,page){
-            switch(category){
-                case "all":
-                    this.categoryURL = "/list/"+page+".json";
-                    break;
-                case "restaurant":
-                    this.categoryURL = "/restaurant/"+page+".json";
-                    break;
-                case "clothing":
-                    this.categoryURL = "/clothing/"+page+".json";
-                    break;
-                case "variety":
-                    this.categoryURL = "/variety/"+page+".json";
-                    break;
+        orderURL: "/near.json", // default
+
+        changeCategoryURL: function(category ,page, location){
+            if(typeof location === 'undefined'){
+                switch(category){
+                    case "all":
+                        this.categoryURL = "/list/"+page+".json";
+                        break;
+                    case "restaurant":
+                        this.categoryURL = "/restaurant/"+page+".json";
+                        break;
+                    case "clothing":
+                        this.categoryURL = "/clothing/"+page+".json";
+                        break;
+                    case "variety":
+                        this.categoryURL = "/variety/"+page+".json";
+                        break;
+                }
+            }else{
+                console.log(location);
+                var lat = location.latitude.toString(10).replace(".","-");
+                var lon = location.longitude.toString(10).replace(".","-");
+                switch(category){
+                    case "all":
+                        this.categoryURL = "/near/"+lat+"/"+lon+"/"+page+".json";
+                        break;
+                    case "restaurant":
+                        this.categoryURL = "/restaurant/near/"+lat+"/"+lon+"/"+page+".json";
+                        break;
+                    case "clothing":
+                        this.categoryURL = "/clothing/near/"+lat+"/"+lon+"/"+page+".json";
+                        break;
+                    case "variety":
+                        this.categoryURL = "/variety/near/"+lat+"/"+lon+"/"+page+".json";
+                        break;
+                }
             }
         },
 

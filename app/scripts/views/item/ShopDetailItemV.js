@@ -1,8 +1,9 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/ShopDetailItemV_tmpl'
+	'hbs!tmpl/item/ShopDetailItemV_tmpl',
+    'communicator'
 ],
-function( Backbone, ShopdetailitemvTmpl  ) {
+function( Backbone, ShopdetailitemvTmpl, Communicator  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
@@ -19,8 +20,18 @@ function( Backbone, ShopdetailitemvTmpl  ) {
     	ui: {},
 
 		/* Ui events hash */
-		events: {},
+		events: {
+        },
 
+        modelEvents: {
+            'sync':'changeTitle'
+        },
+
+        changeTitle: function(){
+            this.render();
+            Communicator.command.execute("changeTitleOnNextPage:Header",this.model.get("title"));
+            $(".Header_title").addClass("Header_nextTitle"); // font-size小さく
+        },
 		/* on render callback */
 		onRender: function() {}
 	});

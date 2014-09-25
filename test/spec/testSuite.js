@@ -21,6 +21,7 @@ define(function() {
 		'spec/views/item/EventItemV.js',
 		'spec/views/item/ShopDetailItemV.js',
 		'spec/views/item/ShopItemV.js',
+		'spec/views/item/StartItemV.js',
 		'spec/views/layout/ContainerLayout.js',
 		'spec/views/layout/DialogLayout.js',
 		'spec/views/layout/DrawerLayout.js',

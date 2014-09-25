@@ -19,18 +19,23 @@ function( Backbone, Communicator, EventComV, Events, ShopComV, Shops ) {
             Communicator.command.setHandler("change:Content",this.changeContent,this); // <- RouterController
 
             this.currentPage = undefined;
+            this.EventsCollection = undefined;
+            this.ShopsCollection = undefined;
 		},
 
         changeContent: function(page){
             if(this.currentPage == page){return;} // 同じページに変えない
             this.currentPage = page;
+            $(window).unbind('scroll');
             switch(page){
-                case "home":
-                    this.show(new EventComV({collection: new Events()}));
+                case "event":
+                    if(!this.EventsCollection){this.EventsCollection = new Events();}
+                    this.show(new EventComV({collection: this.EventsCollection}));
                     this.changeDropItemsToHome();
                     break;
                 case "shops":
-                    this.show(new ShopComV({collection: new Shops()}));
+                    if(!this.ShopsCollection){this.ShopsCollection = new Shops();}
+                    this.show(new ShopComV({collection: this.ShopsCollection}));
                     this.changeDropItemsToShops();
                     break;
                 default:
@@ -40,16 +45,16 @@ function( Backbone, Communicator, EventComV, Events, ShopComV, Shops ) {
             }
         },
         changeDropItemsToHome: function(){
-            $("#DropItem_1").text("全てのイベント");
-            $("#DropItem_2").attr("data-action","umie").text("- Umie");
-            $("#DropItem_3").attr("data-action","sanda").text("- 三田プレミアム・アウトレット");
-            $("#DropItem_4").attr("data-action","mitsui").text("- 三井アウトレット");
+            $("#DropItem_1").attr("data-content","event").text("全てのイベント");
+            $("#DropItem_2").attr("data-content","event").attr("data-action","umie").text("- Umie");
+            $("#DropItem_3").attr("data-content","event").attr("data-action","sanda").text("- 三田プレミアム・アウトレット");
+            $("#DropItem_4").attr("data-content","event").attr("data-action","mitsui").text("- 三井アウトレット");
         },
         changeDropItemsToShops: function(){
-            $("#DropItem_1").text("全てのショップ");
-            $("#DropItem_2").attr("data-action","restaurant").text("- Restaurant");
-            $("#DropItem_3").attr("data-action","clothing").text("- Clothing Store");
-            $("#DropItem_4").attr("data-action","variety").text("- 雑貨屋");
+            $("#DropItem_1").attr("data-content","shops").text("全てのショップ");
+            $("#DropItem_2").attr("data-content","shops").attr("data-action","restaurant").text("- Restaurant");
+            $("#DropItem_3").attr("data-content","shops").attr("data-action","clothing").text("- Clothing Store");
+            $("#DropItem_4").attr("data-content","shops").attr("data-action","variety").text("- 雑貨屋");
         },
 	});
 

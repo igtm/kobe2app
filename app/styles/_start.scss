@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.Start {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  -webkit-transition: $pagingTransTime ease-in-out;
+  transition: $pagingTransTime ease-in-out;
+}
+.Start-isHidden {
+  display: none;
+}
+.Start-isDrawing { //クリック時に付け外しする
+  -webkit-transform: translateX(70%);
+  transform: translateX(70%);
+  overflow-y: hidden;
+  position: fixed;
+}
+.Start_logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

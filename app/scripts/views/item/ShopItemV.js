@@ -29,6 +29,7 @@ function( Backbone, ShopitemvTmpl, Communicator  ) {
 
         nextPage: function(){
             console.log("this.model.eventid:"+this.model.get('uid'));
+            Communicator.command.execute("setOrderTrue:Header"); // 帰ってきた時に、右上のボタンを表示させるのを担保する。
             Communicator.command.execute("nextPage:ContentNextRegion","shops",this.model.get('uid'));
         },
 

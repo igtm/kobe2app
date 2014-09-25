@@ -12,12 +12,15 @@ function(Backbone, Communicator){
 
 		/* Backbone routes hash */
 		appRoutes: {
-            '':'home',
-            'home':'home',
-            'home/:category':'homeWithCategory',
+            '':'start', // startができたらstartに変える。うっとおしいいかも。eventにダイレクトにしよかな。
+            'start': 'start',
+            'event':'event',
+            'event/:category':'eventWithCategory',
 
             'shops':'shops',
-            ':page':'page' // 仮実装
+            'shops/:category':'shopsWithCategory',
+            'shops/:category/near':'shopsInCloseOrder',
+            ':page':'start' // 仮実装
         },
 
         navigator: function(url){
