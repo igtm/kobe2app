@@ -6482,19 +6482,19 @@ a, a:hover, a:focus {
 
 /* Category Color left */
 .categoryColor_Feelkobe {
-  border-right: solid 3px #0E7AC4;
+  border-right: solid 2px #0E7AC4;
   color: #0E7AC4; }
 
 .categoryColor_Umie {
-  border-right: solid 3px #40AAEF;
+  border-right: solid 2px #40AAEF;
   color: #40AAEF; }
 
 .categoryColor_Sanda {
-  border-right: solid 3px #F27398;
+  border-right: solid 2px #F27398;
   color: #F27398; }
 
 .categoryColor_Mitsui {
-  border-right: solid 3px #FBA848;
+  border-right: solid 2px #FBA848;
   color: #FBA848; }
 
 /*
@@ -6708,7 +6708,7 @@ a, a:hover, a:focus {
 
 /* event */
 .Content_item_image {
-  margin-left: 31px; }
+  margin-left: 23px; }
 
 .Content_item_category {
   writing-mode: vertical-rl;
@@ -6719,30 +6719,30 @@ a, a:hover, a:focus {
   top: 0;
   height: 100%;
   opacity: .9;
-  font-size: 28px;
-  font-weight: 700;
   font-family: Prata;
   text-align: left;
-  line-height: 28px;
+  line-height: 21px;
+  font-size: 1.4rem;
   padding-top: 10px;
   z-index: 1; }
 
 .Content_item_text {
   padding: 2% 5%;
-  padding-left: 38px;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  background: #000;
-  opacity: .6;
+  background: #737373;
+  opacity: .9;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
-  font-family: serif; }
+  font-family: serif;
+  font-size: 110%;
+  z-index: 2; }
 
 .Content_item_categoryWithoutImage {
   writing-mode: vertical-rl;
@@ -7150,7 +7150,8 @@ html[xmlns] .slides {
   transition: 200ms ease-in-out; }
 
 .Start-isHidden {
-  display: none; }
+  display: none;
+  z-index: -1; }
 
 .Start-isDrawing {
   -webkit-transform: translateX(70%);

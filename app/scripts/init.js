@@ -42,7 +42,7 @@ require.config({
         /* alias the bootstrap js lib */
         bootstrap: 'vendor/bootstrap',
 
-        /* Alias text.js for template loading and shortcut the templates dir to tmpl */
+        /* Alias text.js for templates loading and shortcut the templates dir to tmpl */
         text: '../bower_components/requirejs-text/text',
         tmpl: "../templates",
 

@@ -26,7 +26,7 @@ function( Backbone, Communicator  ) {
             /* shopsの順番 */
             Communicator.command.setHandler("showOrder:Header",this.showOrder,this); // shops
             Communicator.command.setHandler("hideOrder:Header",this.hideOrder,this); // home event
-            Communicator.command.setHandler("setOrder0:Header",this.setOrder0,this); // ShopComV
+            Communicator.command.setHandler("setOrder0:Header",this.setOrder0,this); // ShopComV ContainerLayout
             Communicator.command.setHandler("setOrder1:Header",this.setOrder1,this); // Router
             Communicator.command.setHandler("setOrderTrue:Header",this.setOrderTrue,this); // Router
             this.shopsOrder = 0; // 0:適当 1:近い順
@@ -115,6 +115,7 @@ function( Backbone, Communicator  ) {
         },
         toggleRightButton: function(){
             Communicator.command.execute("show:loading");
+            var self =this;
             if(navigator.geolocation){
                 switch (this.shopsOrder){
                     case 0: // 近い順を表示する
@@ -155,9 +156,9 @@ function( Backbone, Communicator  ) {
                     url: url,
                     success: function (json) {
                         console.log(json.results[0].address_components[4].long_name);
-                        if("神戸市" === json.results[0].address_components[4].long_name){
-                            this.ui.rightBtn.text("人気順");
-                            this.shopsOrder = 1;
+                        if("神戸市" === json.results[0].address_components[4].long_name || true){ // デモ用
+                            self.ui.rightBtn.text("人気順");
+                            self.shopsOrder = 1;
                             var url = 'shops/';
                             var category = Communicator.reqres.request("getCategory:Container");
                             switch(category){

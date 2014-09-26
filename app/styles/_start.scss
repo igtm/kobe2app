@@ -13,6 +13,7 @@
 }
 .Start-isHidden {
   display: none;
+  z-index: -1;
 }
 .Start-isDrawing { //クリック時に付け外しする
   -webkit-transform: translateX(70%);

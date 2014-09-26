@@ -41,16 +41,16 @@ function( Backbone, Shop ) {
                 var lon = location.longitude.toString(10).replace(".","-");
                 switch(category){
                     case "all":
-                        this.categoryURL = "/near/"+lat+"/"+lon+"/"+page+".json";
+                        this.categoryURL = "/near/all/"+lat+"/"+lon+"/"+page+".json";
                         break;
                     case "restaurant":
-                        this.categoryURL = "/restaurant/near/"+lat+"/"+lon+"/"+page+".json";
+                        this.categoryURL = "/near/restaurant/"+lat+"/"+lon+"/"+page+".json";
                         break;
                     case "clothing":
-                        this.categoryURL = "/clothing/near/"+lat+"/"+lon+"/"+page+".json";
+                        this.categoryURL = "/near/clothing/"+lat+"/"+lon+"/"+page+".json";
                         break;
                     case "variety":
-                        this.categoryURL = "/variety/near/"+lat+"/"+lon+"/"+page+".json";
+                        this.categoryURL = "/near/variety/"+lat+"/"+lon+"/"+page+".json";
                         break;
                 }
             }

@@ -34,6 +34,7 @@ function( Backbone, StartitemvTmpl, Communicator  ) {
         },
 
         drawing: function(){
+            console.log("startDrawing");
             Communicator.command.execute("DrawToggle:Container");
         },
         show: function(){

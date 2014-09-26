@@ -95,7 +95,7 @@ function( Backbone, Shopitemv, ShopcomvTmpl, Communicator, iScroll  ) {
                     url: url,
                     success: function (json) {
                         console.log(json.results[0].address_components[4].long_name);
-                        if ("神戸市" === json.results[0].address_components[4].long_name) {
+                        if ("神戸市" === json.results[0].address_components[4].long_name || true) { // デモ用
                             self.location = position.coords;
                             self.collection.changeCategoryURL(category,self.page,self.location); // URLの決定
                             fetchCategory();

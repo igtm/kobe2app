@@ -34,7 +34,7 @@
 
 /* event */
 .Content_item_image {
-  margin-left: 31px; // font-size:28+ border:3px
+  margin-left: 23px; // font-size:28+ border:3px
 }
 .Content_item_category {
   writing-mode: vertical-rl;
@@ -45,23 +45,21 @@
   top: 0;
   height: 100%;
   opacity: .9;
-  font-size: 28px;
-  font-weight: 700;
   font-family: Prata;
   text-align: left;
-  line-height: 28px;
+  line-height: 21px;
+  font-size: 1.4rem;
   padding-top: 10px;
   z-index: 1;
 }
 .Content_item_text {
   padding: 2% 5%;
-  padding-left: 38px;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  background: #000;
-  opacity: .6;
+  background: #737373;
+  opacity: .9;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
@@ -70,6 +68,8 @@
   -o-text-overflow: ellipsis;
   //white-space: normal; // 入りきらない部分は自動的に改行して表示
   font-family: serif; // 取り敢えず
+  font-size: 110%; // 取り敢えず
+  z-index: 2; // 取り敢えず
 }
 // image無いやつ
 .Content_item_categoryWithoutImage {

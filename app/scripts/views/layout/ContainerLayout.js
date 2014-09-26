@@ -49,7 +49,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRe
 		events: {
             "tap .Container_mask": "drawToggle",
             'swipeLeft .Container_mask': "drawToggle",
-            'swipeRight': "drawToggle",
+            //'swipeRight': "drawToggle",
             'tap .DropItem': "changeCategory"
         },
 
@@ -72,6 +72,7 @@ function( Backbone, Communicator, $, HeaderLayout ,ContentRegion , ContentNextRe
             var category = $(e.currentTarget).attr("data-action");
             if(category == this.currentCategory){return ;}// 同じの押した
             this.currentCategory = category; // 前見ていた履歴を保存できればいいけどなー
+            if(content === 'shops'){ Communicator.command.execute("setOrder0:Header"); }
             if(category == "all"){
                 var url = content;
             }else{
