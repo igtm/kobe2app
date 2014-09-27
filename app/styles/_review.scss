@@ -1,16 +1,28 @@
 @charset "UTF-8";
 
 .Review {
-
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; // 慣性スクロール
+  height: 200px;
+  background: lightgoldenrodyellow;
+  border-radius: 10px;
+  padding: 5px;
+}
+.Review_article {
+  margin-bottom: 10px;
 }
 .Review_subject {
-
+  padding-left: 10px;
 }
 .Review_rate {
-
+  font-size: 1.2rem;
+  margin: 0;
 }
 .Review_starON {
-
+  color: gold;
+}
+li.Review_starOn.fa.fa-star {
+  color: gold;
 }
 .Review_starOff {
 

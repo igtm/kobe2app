@@ -54,6 +54,8 @@ require.config({
         iscroll: 'vendor/iscroll',
         "jquery.glide": 'vendor/jquery.glide.min',
         "jquery.flexslider": 'vendor/jquery.flexslider-min',
+        "google": 'http://maps.google.com/maps/api/js?sensor=true&language=ja',
+        "async": '../bower_components/requirejs-plugins/src/async',
 
 
         /* require handlebars plugin - Alex Sexton */

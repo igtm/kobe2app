@@ -36,6 +36,7 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                     model.changeIdURL(id);
                     model.fetch({
                         success: function() {
+                            self.show(new EventDetailItemV({model:model}));
                             Communicator.command.execute("hide:loading");
                         },
                         error: function () {
@@ -48,7 +49,6 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                         }
                     });
 
-                    this.show(new EventDetailItemV({model:model}));
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
                     $('.Content').addClass('Content_is-paging');
@@ -59,6 +59,7 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                     model.changeIdURL(id);
                     model.fetch({
                         success: function() {
+                            self.show(new ShopDetailItemV({model: model}));
                             Communicator.command.execute("hide:loading");
                         },
                         error: function () {
@@ -71,7 +72,6 @@ function( Backbone, EventDetail, EventDetailItemV, Communicator, ShopDetail, Sho
                         }
                     });
 
-                    this.show(new ShopDetailItemV({model: model}));
                     Communicator.command.execute("pageNext:Header");
                     $('.ContentNext').addClass('ContentNext-isPaging');
                     $('.Content').addClass('Content_is-paging');
