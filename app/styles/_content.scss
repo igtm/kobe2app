@@ -114,9 +114,30 @@
   font-size: 32px;
 }
 .Content_item_star {
-  z-index: 4;
+  z-index: 3;
   position: absolute;
   bottom: 33px;
   right: 0;
   background: #737373;
+  opacity: 0.9;
+}
+.Content_item_rank {
+  color :white;
+  background:grey;
+  opacity: 0.9;
+  position: absolute;
+  top:5px;
+  left: 25px;
+  z-index:3;
+  width: 30px;
+  border-radius: 5px;
+}
+.rank_1 {
+  background: #FFD700;
+}
+.rank_2 {
+  background: #C0C0C0;
+}
+.rank_3 {
+  background: #C47222;
 }

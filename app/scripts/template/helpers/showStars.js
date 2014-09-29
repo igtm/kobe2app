@@ -12,7 +12,7 @@ define('template/helpers/showStars', ['handlebars'], function (Handlebars) {
             i++;
         }
         while(i<=5) {
-            result +=   "<li class='Review_starOff fa fa-star'></li>";
+            result +=   "<li class='Review_starOff fa fa-star-o'></li>";
             i++;
         }
         result += "</ul>";
